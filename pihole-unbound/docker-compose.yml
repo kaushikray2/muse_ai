@@ -1,0 +1,34 @@
+services:
+  # Recursive DNS resolver. Only Pi-hole talks to it; no host ports published.
+  unbound:
+    image: mvance/unbound:latest
+    container_name: unbound
+    hostname: unbound
+    restart: unless-stopped
+    volumes:
+      # Config + DNSSEC trust anchor (var/root.key, auto-created on first start)
+      - ./unbound-config:/opt/unbound/etc/unbound
+
+  # Ad blocker + web UI. This is what your LAN clients point at.
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    hostname: pihole
+    restart: unless-stopped
+    depends_on:
+      - unbound
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+      # Web UI on 8080: port 80 is commonly taken (e.g. by mailcow on this box)
+      - "8080:80/tcp"
+    environment:
+      TZ: "America/Toronto"
+      # CHANGE THIS to a strong password before first start
+      FTLCONF_webserver_api_password: "changeme"
+      # All client queries go to Unbound (recursive, DNSSEC-validated, no third party)
+      FTLCONF_dns_upstreams: "unbound#53"
+      FTLCONF_dns_listeningMode: "all"
+    volumes:
+      - ./etc-pihole:/etc/pihole
+      - ./etc-dnsmasq.d:/etc/dnsmasq.d
