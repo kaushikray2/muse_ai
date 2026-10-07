@@ -1,0 +1,12 @@
+services:
+  unbound:
+    image: mvance/unbound:latest
+    container_name: unbound
+    hostname: unbound
+    restart: unless-stopped
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      # Everything lives in this folder: config + DNSSEC trust anchor (root.key, auto-created on first start)
+      - ./config:/opt/unbound/etc/unbound
