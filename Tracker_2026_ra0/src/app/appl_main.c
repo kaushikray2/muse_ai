@@ -90,54 +90,24 @@ int app_main(void) {
                 /* 2. Disable external IRQs */
                 R_ICU_ExternalIrqDisable(&g_external_irq0_ctrl);
 
-                /* 3. Compute wake time = now + 60s (absolute RTC alarm).
-                   No seconds reset: the alarm matches on sec+min+hour, so it
-                   fires exactly 60s from now regardless of the current
-                   seconds value. */
-                rtc_time_t current_time;
-                R_RTC_C_CalendarTimeGet(&g_rtc0_ctrl, &current_time);
+                /* 3. Sleep ~60s using the 1-second RTC periodic IRQ.
+                   (RA0E2 alarm is minute-resolution only, so count 60
+                   one-second ticks in software for a precise 60s sleep.) */
+                R_RTC_C_PeriodicIrqRateSet(&g_rtc0_ctrl, RTC_PERIODIC_IRQ_SELECT_1_SECOND);
+                R_BSP_IrqClearPending(g_rtc0_cfg.periodic_irq);
+                R_BSP_IrqEnable(g_rtc0_cfg.periodic_irq);
 
-                uint8_t wake_sec  = current_time.tm_sec;
-                uint8_t wake_min  = current_time.tm_min + 1u; /* +60s */
-                uint8_t wake_hour = current_time.tm_hour;
-                if (wake_min >= 60u) {
-                  wake_min -= 60u;
-                  wake_hour++;
-                  if (wake_hour >= 24u) {
-                    wake_hour = 0u;
-                  }
+                for (uint8_t sec = 0u; sec < 60u; sec++) {
+                  __DSB();
+                  __WFI();
+                  __ISB();
+                  R_BSP_IrqClearPending(g_rtc0_cfg.periodic_irq);
                 }
 
-                rtc_alarm_time_t alarm_time;
-                alarm_time.time.tm_sec  = wake_sec;
-                alarm_time.time.tm_min  = wake_min;
-                alarm_time.time.tm_hour = wake_hour;
-                alarm_time.time.tm_mday = current_time.tm_mday;
-                alarm_time.time.tm_mon  = current_time.tm_mon;
-                alarm_time.time.tm_year = current_time.tm_year;
-                alarm_time.time.tm_wday = current_time.tm_wday;
-                alarm_time.sec_match  = true;
-                alarm_time.min_match  = true;
-                alarm_time.hour_match = true;
-                alarm_time.mday_match = false;
-                alarm_time.mon_match  = false;
-                alarm_time.year_match = false;
-                alarm_time.enb        = true;
-                R_RTC_C_CalendarAlarmSet(&g_rtc0_ctrl, &alarm_time);
-
-                /* 4. Clear any pending alarm IRQ & enable its NVIC line */
-                R_BSP_IrqClearPending(g_rtc0_cfg.alarm_irq);
-                R_BSP_IrqEnable(g_rtc0_cfg.alarm_irq);
-
-                /* 5. Sleep until the alarm fires (~60s) */
-                __DSB();
-                __WFI();
-                __ISB();
-
-                /* 6. Wake: shut off the alarm IRQ, then RESTART the
+                /* 4. Wake: shut off the periodic IRQ, then RESTART the
                    scheduler timer (it was stopped in step 1). */
-                R_BSP_IrqDisable(g_rtc0_cfg.alarm_irq);
-                R_BSP_IrqClearPending(g_rtc0_cfg.alarm_irq);
+                R_BSP_IrqDisable(g_rtc0_cfg.periodic_irq);
+                R_BSP_IrqClearPending(g_rtc0_cfg.periodic_irq);
                 R_TAU_Start(&g_timer0_ctrl);
                 R_BSP_IrqClearPending(g_timer0_cfg.cycle_end_irq);
                 R_BSP_IrqEnable(g_timer0_cfg.cycle_end_irq);
