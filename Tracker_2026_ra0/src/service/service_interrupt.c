@@ -87,14 +87,9 @@ void g_rtc0_callback(rtc_callback_args_t * p_args)
 
     if (RTC_EVENT_PERIODIC_IRQ == p_args->event)
     {
-        /* 1. Disable RTC NVIC line so it doesn't trigger repeatedly while awake */
-        R_BSP_IrqDisable(g_rtc0_cfg.periodic_irq);
-        R_BSP_IrqClearPending(g_rtc0_cfg.periodic_irq);
-
-        /* 2. Restart TAU peripheral timer for 0.5ms ticks */
-        R_TAU_Start(&g_timer0_ctrl);
-
-        /* 3. Reset application tick service state */
-        service_timer_ini();
+        /* Intentionally empty: the 60s sleep in appl_main.c case 4 manages
+           the RTC IRQ enable/disable and the TAU restart itself. Disabling
+           the IRQ or restarting the timer here would break the 60-count
+           WFI loop (first tick would kill the IRQ for the remaining 59). */
     }
 }
