@@ -61,23 +61,6 @@ void g_flash_callback(flash_callback_args_t * p_args)
 }
 
 /* 1. Define the callback function to handle the interrupt */
-//void g_rtc0_callback(rtc_callback_args_t * p_args)
-//{
-//    if (p_args == NULL)
-//    {
-//        return;
-//    }
-//
-//    if (RTC_EVENT_PERIODIC_IRQ == p_args->event)
-//    {
-//        /* The RTC IRQ is intentionally disabled here. Case 4 re-enables and
-//           reconfigures it immediately before the next WFI entry. */
-//        R_BSP_IrqDisable(g_rtc0_cfg.periodic_irq);
-//        R_TAU_Start(&g_timer0_ctrl);
-//        //R_SAU_UART_Open(&g_uart0_ctrl, &g_uart0_cfg);
-//    }
-//}
-
 void g_rtc0_callback(rtc_callback_args_t * p_args)
 {
     if (p_args == NULL)
@@ -93,3 +76,4 @@ void g_rtc0_callback(rtc_callback_args_t * p_args)
            WFI loop (first tick would kill the IRQ for the remaining 59). */
     }
 }
+
