@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<raConfiguration version="12">
+  <generalSettings>
+    <option key="#Board#" value="board.custom"/>
+    <option key="CPU" value="RA0E2"/>
+    <option key="Core" value="CM23"/>
+    <option key="#TargetName#" value="R7FA0E2094CFJ"/>
+    <option key="#TargetARCHITECTURE#" value="cortex-m23"/>
+    <option key="#DeviceCommand#" value="R7FA0E209"/>
+    <option key="#RTOS#" value="_none"/>
+    <option key="#pinconfiguration#" value="R7FA0E2094CFJ.pincfg"/>
+    <option key="#FSPVersion#" value="6.5.0"/>
+    <option key="#SELECTED_TOOLCHAIN#" value="clang_arm"/>
+    <option key="#ToolchainVersion#" value=""/>
+  </generalSettings>
+  <raBspConfiguration>
+    <config id="config.bsp.ra0e2.R7FA0E2094CFJ">
+      <property id="config.bsp.part_number" value="config.bsp.part_number.value"/>
+      <property id="config.bsp.rom_size_bytes" value="config.bsp.rom_size_bytes.value"/>
+      <property id="config.bsp.rom_size_bytes_hidden" value="config.bsp.rom_size_bytes_hidden.value"/>
+      <property id="config.bsp.ram_size_bytes" value="config.bsp.ram_size_bytes.value"/>
+      <property id="config.bsp.data_flash_size_bytes" value="config.bsp.data_flash_size_bytes.value"/>
+      <property id="config.bsp.package_style" value="config.bsp.package_style.value"/>
+      <property id="config.bsp.package_pins" value="config.bsp.package_pins.value"/>
+      <property id="config.bsp.number_of_cores" value="1"/>
+      <property id="config.bsp.irq_count_hidden" value="64"/>
+    </config>
+    <config id="config.bsp.ra0e2">
+      <property id="config.bsp.series" value="config.bsp.series.value"/>
+    </config>
+    <config id="config.bsp.ra0e2.fsp">
+      <property id="config.bsp.fsp.inline_irq_functions" value="config.bsp.common.inline_irq_functions.disabled"/>
+      <property id="config.bsp.common.main_osc_wait" value="config.bsp.common.main_osc_wait.2_power_of_18_div_xtal"/>
+      <property id="config.bsp.low_voltage_mode" value="config.bsp.low_voltage_mode.disabled"/>
+      <property id="config.bsp.fsp.mcu.adc.max_freq_hz" value="32000000"/>
+      <property id="config.bsp.fsp.mcu.adc.sensors_are_exclusive" value="0"/>
+      <property id="config.bsp.fsp.mcu.sau_uart.max_baud" value="5333333"/>
+      <property id="config.bsp.fsp.mcu.sau_spi.max_bitrate" value="16000000"/>
+      <property id="config.bsp.fsp.mcu.uarta.max_baud" value="153600"/>
+      <property id="config.bsp.fsp.mcu.uarta.pclk_restriction_enable" value="false"/>
+      <property id="config.bsp.fsp.mcu.iic_master.rate.rate_fastplus" value="1"/>
+      <property id="config.bsp.fsp.mcu.iic_master.fastplus_channels" value="0"/>
+      <property id="config.bsp.fsp.mcu.iic_slave.rate.rate_fastplus" value="1"/>
+      <property id="config.bsp.fsp.mcu.iic_slave.fastplus_channels" value="0x0"/>
+      <property id="config.bsp.fsp.mcu.adc_d.max_scan_channel" value="9"/>
+    </config>
+    <config id="config.bsp.ra0e2.linker">
+      <property id="config.bsp.option_setting.ofs0" value="config.bsp.option_setting.ofs0.enabled"/>
+      <property id="config.bsp.option_setting.ofs0.iwdt_start_mode" value="config.bsp.option_setting.ofs0.iwdt_start_mode.disabled"/>
+      <property id="config.bsp.option_setting.ofs0.iwdt_timeout" value="config.bsp.option_setting.ofs0.iwdt_timeout.2048"/>
+      <property id="config.bsp.option_setting.ofs0.iwdt_divisor" value="config.bsp.option_setting.ofs0.iwdt_divisor.128"/>
+      <property id="config.bsp.option_setting.ofs0.iwdt_window_end" value="config.bsp.option_setting.ofs0.iwdt_window_end.0"/>
+      <property id="config.bsp.option_setting.ofs0.iwdt_window_start" value="config.bsp.option_setting.ofs0.iwdt_window_start.100"/>
+      <property id="config.bsp.option_setting.ofs0.iwdt_reset_interrupt" value="config.bsp.option_setting.ofs0.iwdt_reset_interrupt.Reset"/>
+      <property id="config.bsp.option_setting.ofs0.iwdt_stop_control" value="config.bsp.option_setting.ofs0.iwdt_stop_control.stops"/>
+      <property id="config.bsp.option_setting.ofs1" value="config.bsp.option_setting.ofs1.enabled"/>
+      <property id="config.bsp.option_setting.ofs1.voltage_detection0.start" value="config.bsp.option_setting.ofs1.voltage_detection0.start.disabled"/>
+      <property id="config.bsp.option_setting.ofs1.voltage_detection0_level" value="config.bsp.option_setting.ofs1.voltage_detection0_level.186"/>
+      <property id="config.bsp.option_setting.ofs1.flash_readprotection" value="config.bsp.option_setting.ofs1.flash_readprotection.disabled"/>
+      <property id="config.bsp.option_setting.ofs1.flash_readprotection_start" value="0x01"/>
+      <property id="config.bsp.option_setting.ofs1.flash_readprotection_end" value="0x3F"/>
+      <property id="config.bsp.option_setting.ofs1.res_pin_selection" value="config.bsp.option_setting.ofs1.res_pin_selection.res_input"/>
+      <property id="config.bsp.option_setting.osis" value="config.bsp.option_setting.osis.disabled"/>
+      <property id="config.bsp.option_setting.osis.id_mode" value="config.bsp.option_setting.osis.id_mode.unlocked"/>
+      <property id="config.bsp.option_setting.osis.id_code" value="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"/>
+      <property id="config.bsp.option_setting.osis.id_fixed.1" value=""/>
+      <property id="config.bsp.option_setting.osis.id_fixed.2" value=""/>
+      <property id="config.bsp.option_setting.osis.id_fixed.3" value=""/>
+      <property id="config.bsp.option_setting.osis.id_fixed.4" value=""/>
+    </config>
+    <config id="config.bsp.ra">
+      <property id="config.bsp.common.main" value="0x400"/>
+      <property id="config.bsp.common.heap" value="0"/>
+      <property id="config.bsp.common.bootloader.xip_enable" value="config.bsp.common.bootloader.xip_enable.disabled"/>
+      <property id="config.bsp.common.vcc" value="3300"/>
+      <property id="config.bsp.common.checking" value="config.bsp.common.checking.disabled"/>
+      <property id="config.bsp.common.assert" value="config.bsp.common.assert.none"/>
+      <property id="config.bsp.common.soft_reset" value="config.bsp.common.soft_reset.disabled"/>
+      <property id="config.bsp.common.main_osc_populated" value="config.bsp.common.main_osc_populated.enabled"/>
+      <property id="config.bsp.common.pfs_protect" value="config.bsp.common.pfs_protect.enabled"/>
+      <property id="config.bsp.common.c_runtime_init" value="config.bsp.common.c_runtime_init.enabled"/>
+      <property id="config.bsp.common.early_init" value="config.bsp.common.early_init.disabled"/>
+      <property id="config.bsp.common.main_osc_clock_source" value="config.bsp.common.main_osc_clock_source.crystal"/>
+      <property id="config.bsp.common.subclock_populated" value="config.bsp.common.subclock_populated.enabled"/>
+      <property id="config.bsp.common.subclock_drive" value="config.bsp.common.subclock_drive.standard"/>
+      <property id="config.bsp.common.subclock_stabilization_ms" value="1000"/>
+    </config>
+  </raBspConfiguration>
+  <raClockConfiguration>
+    <node id="board.clock.xtal.freq" mul="20000000" option="_edit"/>
+    <node id="board.clock.xtal.div" option="board.clock.xtal.div.1"/>
+    <node id="board.clock.hoco.freq" option="board.clock.hoco.freq.32m"/>
+    <node id="board.clock.hoco.div" option="board.clock.hoco.div.1"/>
+    <node id="board.clock.moco.freq" option="board.clock.moco.freq.4m"/>
+    <node id="board.clock.moco.div" option="board.clock.moco.div.1"/>
+    <node id="board.clock.subclk.freq" option="board.clock.subclk.freq.32768"/>
+    <node id="board.clock.loco.freq" option="board.clock.loco.freq.32768"/>
+    <node id="board.clock.iclk.source" option="board.clock.iclk.source.hoco"/>
+    <node id="board.clock.iclk.display" option="board.clock.iclk.display.value"/>
+    <node id="board.clock.tau.ck00.div" option="board.clock.tau.ck00.div.1"/>
+    <node id="board.clock.tau.ck00.display" option="board.clock.tau.ck00.display.value"/>
+    <node id="board.clock.tau.ck01.div" option="board.clock.tau.ck01.div.1"/>
+    <node id="board.clock.tau.ck01.display" option="board.clock.tau.ck01.display.value"/>
+    <node id="board.clock.tau.ck02.div" option="board.clock.tau.ck02.div.2"/>
+    <node id="board.clock.tau.ck02.display" option="board.clock.tau.ck02.display.value"/>
+    <node id="board.clock.tau.ck03.div" option="board.clock.tau.ck03.div.256"/>
+    <node id="board.clock.tau.ck03.display" option="board.clock.tau.ck03.display.value"/>
+    <node id="board.clock.sau.ck00.div" option="board.clock.sau.ck00.div.2"/>
+    <node id="board.clock.sau.ck00.display" option="board.clock.sau.ck00.display.value"/>
+    <node id="board.clock.sau.ck01.div" option="board.clock.sau.ck01.div.1"/>
+    <node id="board.clock.sau.ck01.display" option="board.clock.sau.ck01.display.value"/>
+    <node id="board.clock.sau.ck10.div" option="board.clock.sau.ck10.div.2"/>
+    <node id="board.clock.sau.ck10.display" option="board.clock.sau.ck10.display.value"/>
+    <node id="board.clock.sau.ck11.div" option="board.clock.sau.ck11.div.1"/>
+    <node id="board.clock.sau.ck11.display" option="board.clock.sau.ck11.display.value"/>
+    <node id="board.clock.clkout.source" option="board.clock.clkout.source.disabled"/>
+    <node id="board.clock.clkout.div" option="board.clock.clkout.div.1"/>
+    <node id="board.clock.clkout.display" option="board.clock.clkout.display.value"/>
+    <node id="board.clock.clkout1.source" option="board.clock.clkout1.source.disabled"/>
+    <node id="board.clock.clkout1.div" option="board.clock.clkout1.div.1"/>
+    <node id="board.clock.clkout1.display" option="board.clock.clkout1.display.value"/>
+    <node id="board.clock.utasel.source" option="board.clock.utasel.source.disabled"/>
+    <node id="board.clock.uarta.source" option="board.clock.uarta.source.utasel"/>
+    <node id="board.clock.uarta.source.display" option="board.clock.uarta.display.value"/>
+    <node id="board.clock.uarta1.source" option="board.clock.uarta1.source.utasel"/>
+    <node id="board.clock.uarta1.source.display" option="board.clock.uarta1.display.value"/>
+    <node id="board.clock.fsxp.source" option="board.clock.fsxp.source.loco"/>
+    <node id="board.clock.tml.fitl0.source" option="board.clock.tml.fitl0.source.fsxp"/>
+    <node id="board.clock.tml.fitl0.display" option="board.clock.tml.fitl0.display.value"/>
+    <node id="board.clock.tml.fitl1.source" option="board.clock.tml.fitl1.source.disabled"/>
+    <node id="board.clock.tml.fitl1.display" option="board.clock.tml.fitl1.display.value"/>
+    <node id="board.clock.tml.fitl2.source" option="board.clock.tml.fitl2.source.disabled"/>
+    <node id="board.clock.tml.fitl2.display" option="board.clock.tml.fitl2.display.value"/>
+    <node id="board.clock.fsxp.display" option="board.clock.fsxp.display.value"/>
+  </raClockConfiguration>
+  <raComponentSelection>
+    <component apiversion="" class="Projects" condition="" group="all" subgroup="common" variant="" vendor="Renesas" version="6.5.0">
+      <description>Common source for all template projects.</description>
+      <originalPack>Renesas.RA_common.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="CMSIS" condition="" group="Main" subgroup="CoreM" variant="" vendor="Arm" version="6.1.0+fsp.6.5.0">
+      <description>Arm CMSIS Version 6 - Core (M)</description>
+      <originalPack>Arm.CMSIS6.6.1.0+fsp.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="Common" condition="" group="all" subgroup="fsp_common" variant="" vendor="Renesas" version="6.5.0">
+      <description>Board Support Package Common Files</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_ioport" variant="" vendor="Renesas" version="6.5.0">
+      <description>I/O Port</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="BSP" condition="" group="Board" subgroup="custom" variant="" vendor="Renesas" version="6.5.0">
+      <description>Custom Board Support Files</description>
+      <originalPack>Renesas.RA_board_custom.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="BSP" condition="" group="ra0e2" subgroup="device" variant="R7FA0E2094CFJ" vendor="Renesas" version="6.5.0">
+      <description>Board support package for R7FA0E2094CFJ</description>
+      <originalPack>Renesas.RA_mcu_ra0e2.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="BSP" condition="" group="ra0e2" subgroup="device" variant="" vendor="Renesas" version="6.5.0">
+      <description>Board support package for RA0E2</description>
+      <originalPack>Renesas.RA_mcu_ra0e2.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="BSP" condition="" group="ra0e2" subgroup="fsp" variant="" vendor="Renesas" version="6.5.0">
+      <description>Board support package for RA0E2 - FSP Data</description>
+      <originalPack>Renesas.RA_mcu_ra0e2.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="BSP" condition="" group="ra0e2" subgroup="events" variant="" vendor="Renesas" version="6.5.0">
+      <description>Board support package for RA0E2 - Events</description>
+      <originalPack>Renesas.RA_mcu_ra0e2.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="BSP" condition="" group="ra0e2" subgroup="linker" variant="" vendor="Renesas" version="6.5.0">
+      <description>Board support package for RA0E2 - Linker</description>
+      <originalPack>Renesas.RA_mcu_ra0e2.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_sau_uart" variant="" vendor="Renesas" version="6.5.0">
+      <description>SAU UART</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_tau" variant="" vendor="Renesas" version="6.5.0">
+      <description>Timer Array Unit (Independent Channels)</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_flash_lp" variant="" vendor="Renesas" version="6.5.0">
+      <description>Flash Memory Low Power</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_sau_spi" variant="" vendor="Renesas" version="6.5.0">
+      <description>Serial Peripheral Interface on Serial Array Unit</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_icu" variant="" vendor="Renesas" version="6.5.0">
+      <description>External Interrupt</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_dtc" variant="" vendor="Renesas" version="6.5.0">
+      <description>Data Transfer Controller</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_adc_d" variant="" vendor="Renesas" version="6.5.0">
+      <description>A/D Converter</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_elc" variant="" vendor="Renesas" version="6.5.0">
+      <description>Event Link Controller</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_rtc_c" variant="" vendor="Renesas" version="6.5.0">
+      <description>Real Time Clock</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
+  </raComponentSelection>
+  <raElcConfiguration/>
+  <raIcuConfiguration/>
+  <raLinkMapConfiguration/>
+  <raModuleConfiguration>
+    <module id="module.driver.ioport_on_ioport.0">
+      <property id="module.driver.ioport.name" value="g_ioport"/>
+      <property id="module.driver.ioport.elc_trigger_ioport1" value="_disabled"/>
+      <property id="module.driver.ioport.elc_trigger_ioport2" value="_disabled"/>
+      <property id="module.driver.ioport.elc_trigger_ioport3" value="_disabled"/>
+      <property id="module.driver.ioport.elc_trigger_ioport4" value="_disabled"/>
+      <property id="module.driver.ioport.pincfg" value="g_bsp_pin_cfg"/>
+    </module>
+    <module id="module.driver.timer_on_tau.122710434">
+      <property id="module.driver.timer.name" value="g_timer0"/>
+      <property id="module.driver.timer.channel" value="0"/>
+      <property id="module.driver.timer.func" value="module.driver.timer.func.func_interval_timer"/>
+      <property id="module.driver.timer.bit_mode_timer" value="module.driver.timer.bit_mode_timer.16bit_timer"/>
+      <property id="module.driver.timer.operation_clock" value="module.driver.timer.operation_clock.CK00"/>
+      <property id="module.driver.timer.period" value="500"/>
+      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_usec"/>
+      <property id="module.driver.timer.higher8bitperiod" value="0"/>
+      <property id="module.driver.timer.higher8bitunit" value="module.driver.timer.higher8bitunit.unit_period_raw_counts"/>
+      <property id="module.driver.timer.input_source" value="module.driver.timer.input_source.no_input_source"/>
+      <property id="module.driver.timer.trigger_edge" value="module.driver.timer.trigger_edge.trigger_edge_rising"/>
+      <property id="module.driver.timer.input_filter" value="module.driver.timer.input_filter.disabled"/>
+      <property id="module.driver.timer.initial_output" value="module.driver.timer.initial_output.disabled"/>
+      <property id="module.driver.timer.opirq" value="module.driver.timer.opirq.set"/>
+      <property id="module.driver.timer.p_callback" value="timer0_callback"/>
+      <property id="module.driver.timer.ipl" value="board.icu.common.irq.priority2"/>
+      <property id="module.driver.timer.higher_8bit_ipl" value="_disabled"/>
+    </module>
+    <module id="module.driver.uart_on_sau_uart.1836849556">
+      <property id="module.driver.uart.name" value="g_uart0"/>
+      <property id="module.driver.uart.channel" value="2"/>
+      <property id="module.driver.uart.data_bits" value="module.driver.uart.data_bits.data_bits_8"/>
+      <property id="module.driver.uart.parity" value="module.driver.uart.parity.parity_off"/>
+      <property id="module.driver.uart.stop_bits" value="module.driver.uart.stop_bits.stop_bits_1"/>
+      <property id="module.driver.uart.data_direct" value="module.driver.uart.data_direct.data_direct_lsb"/>
+      <property id="module.driver.uart.baud" value="115200"/>
+      <property id="module.driver.uart.operation_clock" value="module.driver.uart.operation_clock.ckm0"/>
+      <property id="module.driver.uart.signallevel" value="module.driver.uart.signallevel.standard"/>
+      <property id="module.driver.uart.callback" value="g_uart0_callback"/>
+      <property id="module.driver.uart.transmitend.priority" value="board.icu.common.irq.priority2"/>
+      <property id="module.driver.uartend.priority" value="board.icu.common.irq.priority2"/>
+      <property id="module.driver.uarterror.priority" value="_disabled"/>
+    </module>
+    <module id="module.driver.flash_on_flash_lp.250597162">
+      <property id="module.driver.flash.name" value="g_flash0"/>
+      <property id="module.driver.flash.data_flash_bgo" value="module.driver.flash.data_flash_bgo.enabled"/>
+      <property id="module.driver.flash.p_callback" value="g_flash_callback"/>
+      <property id="module.driver.flash.ipl" value="board.icu.common.irq.priority3"/>
+    </module>
+    <module id="module.driver.spi_on_sau_spi.368971954">
+      <property id="module.driver.spi.name" value="g_spi0"/>
+      <property id="module.driver.spi.channel" value="module.driver.sau.spi_channel.sau_spi00"/>
+      <property id="module.driver.spi.operation_mode" value="module.driver.spi.operation_mode_master"/>
+      <property id="module.driver.spi.operation_clock" value="module.driver.spi.operation_clock.ck0"/>
+      <property id="module.driver.spi.transfer.mode" value="module.driver.spi.transfer.mode.single"/>
+      <property id="module.driver.spi.bit_order" value="module.driver.spi.bit_order.msb_first"/>
+      <property id="module.driver.spi.data_phase" value="module.driver.spi.data_phase.before_start"/>
+      <property id="module.driver.spi.clock_phase" value="module.driver.spi.clock_phase.reverse"/>
+      <property id="module.driver.spi.bitrate" value="100000"/>
+      <property id="module.driver.spi.p_callback" value="sau_spi_callback"/>
+      <property id="module.driver.spi.tei_ipl" value="board.icu.common.irq.priority2"/>
+    </module>
+    <module id="module.driver.external_irq_on_icu.1639117901">
+      <property id="module.driver.external_irq.name" value="g_external_irq0"/>
+      <property id="module.driver.external_irq.channel" value="2"/>
+      <property id="module.driver.external_irq.trigger" value="module.driver.external_irq.trigger.trig_rising"/>
+      <property id="module.driver.external_irq.filter_enable" value="module.driver.external_irq.filter_enable.false"/>
+      <property id="module.driver.external_irq.filter_source" value="module.driver.external_irq.filter_source.pclk"/>
+      <property id="module.driver.external_irq.clock_source_div" value="module.driver.external_irq.clock_source_div.clock_source_div_by_1"/>
+      <property id="module.driver.external_irq.p_callback" value="lora_dio1_callback"/>
+      <property id="module.driver.external_irq.ipl" value="board.icu.common.irq.priority2"/>
+    </module>
+    <module id="module.driver.transfer_on_dtc.654597159">
+      <property id="module.driver.transfer.name" value="g_transfer0"/>
+      <property id="module.driver.transfer.mode" value="module.driver.transfer.mode.mode_normal"/>
+      <property id="module.driver.transfer.size" value="module.driver.transfer.size.size_2_byte"/>
+      <property id="module.driver.transfer.dest_addr_mode" value="module.driver.transfer.dest_addr_mode.addr_mode_fixed"/>
+      <property id="module.driver.transfer.src_addr_mode" value="module.driver.transfer.src_addr_mode.addr_mode_fixed"/>
+      <property id="module.driver.transfer.repeat_area" value="module.driver.transfer.repeat_area.repeat_area_source"/>
+      <property id="module.driver.transfer.interrupt" value="module.driver.transfer.interrupt.interrupt_end"/>
+      <property id="module.driver.transfer.length" value="0"/>
+      <property id="module.driver.transfer.num_blocks" value="0"/>
+      <property id="module.driver.transfer.number_of_descriptors" value="1"/>
+      <property id="module.driver.transfer.activation_source" value="_disabled"/>
+    </module>
+    <module id="module.driver.transfer_on_dtc.675708457">
+      <property id="module.driver.transfer.name" value="g_transfer1"/>
+      <property id="module.driver.transfer.mode" value="module.driver.transfer.mode.mode_normal"/>
+      <property id="module.driver.transfer.size" value="module.driver.transfer.size.size_2_byte"/>
+      <property id="module.driver.transfer.dest_addr_mode" value="module.driver.transfer.dest_addr_mode.addr_mode_fixed"/>
+      <property id="module.driver.transfer.src_addr_mode" value="module.driver.transfer.src_addr_mode.addr_mode_fixed"/>
+      <property id="module.driver.transfer.repeat_area" value="module.driver.transfer.repeat_area.repeat_area_source"/>
+      <property id="module.driver.transfer.interrupt" value="module.driver.transfer.interrupt.interrupt_end"/>
+      <property id="module.driver.transfer.length" value="0"/>
+      <property id="module.driver.transfer.num_blocks" value="0"/>
+      <property id="module.driver.transfer.number_of_descriptors" value="1"/>
+      <property id="module.driver.transfer.activation_source" value="_disabled"/>
+    </module>
+    <module id="module.driver.adc_on_adc_d.1604520894">
+      <property id="module.driver.adc.name" value="g_adc0"/>
+      <property id="module.driver.adc.resolution" value="module.driver.adc.resolution.resolution_12_bit"/>
+      <property id="module.driver.adc.conversion_operation" value="module.driver.adc.conversion_operation.one_shot"/>
+      <property id="module.driver.adc.operation_trigger" value="module.driver.adc.operation_trigger.wait"/>
+      <property id="module.driver.adc.operation_voltage" value="module.driver.adc.operation_voltage.normal1"/>
+      <property id="module.driver.adc.conversion_clock" value="module.driver.adc.conversion_clock.div1"/>
+      <property id="module.driver.adc.channel_mode" value="module.driver.adc.channel_mode.scan"/>
+      <property id="module.driver.adc.input_channel" value="module.driver.adc.input_channel.channel_0"/>
+      <property id="module.driver.adc.negative_vref" value="module.driver.adc.negative_vref.vss"/>
+      <property id="module.driver.adc.positive_vref" value="module.driver.adc.positive_vref.vcc"/>
+      <property id="module.driver.adc.p_callback" value="g_adc0_callback"/>
+      <property id="module.driver.adc.scan_end_ipl" value="board.icu.common.irq.priority2"/>
+      <property id="module.driver.adc.trigger" value="module.driver.adc.trigger_interrupt.software"/>
+      <property id="module.driver.adc.ulbaudsetting.condition" value="module.driver.adc.ulbaudsetting.condition.inrange"/>
+      <property id="module.driver.adc.ulbaudsetting.adul" value="255"/>
+      <property id="module.driver.adc.ulbaudsetting.adll" value="0"/>
+    </module>
+    <module id="module.driver.elc_on_elc.301638995">
+      <property id="module.driver.elc.name" value="g_elc"/>
+    </module>
+    <module id="module.driver.rtc_on_rtc_c.459411983">
+      <property id="module.driver.rtc.name" value="g_rtc0"/>
+      <property id="module.driver.rtc.subclock_division" value="module.driver.rtc.clock_source.clock_source_fsxp"/>
+      <property id="module.driver.rtc.p_callback" value="g_rtc0_callback"/>
+      <property id="module.driver.rtc.interrupt_ipl" value="board.icu.common.irq.priority1"/>
+    </module>
+    <context id="_hal.0">
+      <stack module="module.driver.ioport_on_ioport.0"/>
+      <stack module="module.driver.timer_on_tau.122710434"/>
+      <stack module="module.driver.uart_on_sau_uart.1836849556">
+        <stack module="module.driver.transfer_on_dtc.654597159" requires="module.driver.sau_uart.requires.transfer_tx"/>
+        <stack module="module.driver.transfer_on_dtc.675708457" requires="module.driver.sau_uart.requires.transfer_rx"/>
+      </stack>
+      <stack module="module.driver.flash_on_flash_lp.250597162"/>
+      <stack module="module.driver.spi_on_sau_spi.368971954"/>
+      <stack module="module.driver.external_irq_on_icu.1639117901"/>
+      <stack module="module.driver.adc_on_adc_d.1604520894"/>
+      <stack module="module.driver.elc_on_elc.301638995"/>
+      <stack module="module.driver.rtc_on_rtc_c.459411983"/>
+    </context>
+    <config id="config.driver.sau_uart">
+      <property id="config.driver.sau_uart.param_checking_enable" value="config.driver.sau_uart.param_checking_enable.enabled"/>
+      <property id="config.driver.sau_uart.critical_section_enable" value="config.driver.sau_uart.critical_section_enable.disabled"/>
+      <property id="config.driver.sau_uart.dtc_support" value="config.driver.sau_uart.dtc_support.enabled"/>
+      <property id="config.driver.sau_uart.single_channel" value="config.driver.sau_uart.single_channel.disabled"/>
+      <property id="config.driver.sau_uart.fixed_baudrate_enable" value="config.driver.sau_uart.fixed_baudrate_enable.enabled"/>
+    </config>
+    <config id="config.driver.elc">
+      <property id="config.driver.elc.checking" value="config.driver.elc.checking.enabled"/>
+    </config>
+    <config id="config.driver.rtc_c">
+      <property id="config.driver.rtc.param_checking_enable" value="config.driver.rtc.param_checking_enable.enabled"/>
+    </config>
+    <config id="config.driver.tau">
+      <property id="config.driver.tau.param_checking_enable" value="config.driver.tau.param_checking_enable.bsp"/>
+      <property id="config.driver.tau.interrupt_support_enable" value="config.driver.tau.interrupt_support_enable.enabled"/>
+      <property id="config.driver.tau.output_support_enable" value="config.driver.tau.output_support_enable.disabled"/>
+      <property id="config.driver.tau.input_support_enable" value="config.driver.tau.input_support_enable.disabled"/>
+      <property id="config.driver.tau.extra_input_support_enable" value="config.driver.tau.extra_input_support_enable.disabled"/>
+      <property id="config.driver.tau.8bit_mode_support_enable" value="config.driver.tau.8bit_mode_support_enable.disabled"/>
+    </config>
+    <config id="config.driver.ioport">
+      <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
+      <property id="config.driver.ioport.ccd_support_enable" value="config.driver.ioport.ccd_support_enable.disabled"/>
+    </config>
+    <config id="config.driver.icu">
+      <property id="config.driver.icu.param_checking_enable" value="config.driver.icu.param_checking_enable.bsp"/>
+    </config>
+    <config id="config.driver.dtc">
+      <property id="config.driver.dtc.param_checking_enable" value="config.driver.dtc.param_checking_enable.bsp"/>
+      <property id="config.driver.dtc.vector_table" value=".fsp_dtc_vector_table"/>
+    </config>
+    <config id="config.driver.sau_spi">
+      <property id="config.driver.sau_spi.param_checking_enable" value="config.driver.sau_spi.param_checking_enable.enabled"/>
+      <property id="config.driver.sau_spi.critical_section_enable" value="config.driver.sau_spi.critical_section_enable.disabled"/>
+      <property id="config.driver.sau_spi.single_channel_enable" value="config.driver.sau_spi.single_channel_enable.disabled"/>
+      <property id="config.driver.spi.transfer_operation_mode" value="config.driver.spi.transfer_operation_mode_transmission_reception"/>
+      <property id="config.driver.sau_spi.dtc_support" value="config.driver.sau_spi.dtc_support.disabled"/>
+      <property id="config.driver.sau_spi.multiple_slave_enable" value="config.driver.sau_spi.multiple_slave_enable.disabled"/>
+      <property id="config.driver.sau_spi.transfer_continuous_enable" value="config.driver.sau_spi.transfer_continuous_enable.enabled"/>
+    </config>
+    <config id="config.driver.flash_lp">
+      <property id="config.driver.flash_lp.param_checking_enable" value="config.flash_lp.param_checking_enable.bsp"/>
+      <property id="config.driver.flash_lp.param_code_flash_programming_enable" value="config.driver.flash_lp.param_code_flash_programming_enable.disabled"/>
+      <property id="config.driver.flash_lp.bank_programming_enable" value="enum.mcu.flash.bank_programming.disabled"/>
+      <property id="config.driver.flash_lp.param_data_flash_programming_enable" value="config.driver.flash_lp.param_data_flash_programming_enable.enabled"/>
+      <property id="config.driver.flash_lp.data_flash_bgo_enable" value="config.driver.flash_lp.data_flash_bgo_enable.enabled"/>
+      <property id="config.driver.flash_lp.instant_bank_swap" value="enum.mcu.flash.instant_bank_swap.disabled"/>
+    </config>
+    <config id="config.driver.adc_d">
+      <property id="config.driver.adc.param_checking_enable" value="config.driver.adc.param_checking_enable.bsp"/>
+      <property id="config.driver.adc.internal_reference_voltage" value="config.driver.adc.internal_reference_voltage.enabled"/>
+      <property id="config.driver.adc.snooze_mode_support" value="config.driver.adc.snooze_mode_support.disabled"/>
+      <property id="config.driver.adc.interrupt_support" value="config.driver.adc.interrupt_support.enabled"/>
+    </config>
+  </raModuleConfiguration>
+  <raPinConfiguration>
+    <symbolicName propertyId="p014.symbolic_name" value="MCU_LORA_RXEN"/>
+    <symbolicName propertyId="p015.symbolic_name" value="MCU_LORA_NSS"/>
+    <symbolicName propertyId="p100.symbolic_name" value="MCU_LORA_SI"/>
+    <symbolicName propertyId="p101.symbolic_name" value="MCU_LORA_SO"/>
+    <symbolicName propertyId="p102.symbolic_name" value="MCU_LORA_SCK"/>
+    <symbolicName propertyId="p103.symbolic_name" value="MCU_LED"/>
+    <symbolicName propertyId="p109.symbolic_name" value="MCU_GNSS_TXD"/>
+    <symbolicName propertyId="p110.symbolic_name" value="MCU_GNSS_RXD"/>
+    <symbolicName propertyId="p112.symbolic_name" value="MCU_LORA_RST"/>
+    <symbolicName propertyId="p201.symbolic_name" value="MCU_LORA_TXEN"/>
+    <symbolicName propertyId="p206.symbolic_name" value="MCU_RST"/>
+    <symbolicName propertyId="p207.symbolic_name" value="MCU_LORA_DIO1"/>
+    <symbolicName propertyId="p208.symbolic_name" value="MCU_LORA_BUSY"/>
+    <pincfg active="true" name="R7FA0E2094CFJ.pincfg" selected="true" symbol="g_bsp_pin_cfg">
+      <configSetting altId="adc0.an000.p010" configurationId="adc0.an000"/>
+      <configSetting altId="adc0.mode.custom.free" configurationId="adc0.mode"/>
+      <configSetting altId="irq.irq0.p200" configurationId="irq.irq0"/>
+      <configSetting altId="irq.irq2.p207" configurationId="irq.irq2"/>
+      <configSetting altId="irq.mode.custom.free" configurationId="irq.mode"/>
+      <configSetting altId="jtag_fslash_swd.mode.swd.free" configurationId="jtag_fslash_swd.mode"/>
+      <configSetting altId="jtag_fslash_swd.swclk.p300" configurationId="jtag_fslash_swd.swclk"/>
+      <configSetting altId="jtag_fslash_swd.swdio.p108" configurationId="jtag_fslash_swd.swdio"/>
+      <configSetting altId="p010.adc0.an000" configurationId="p010"/>
+      <configSetting altId="p010.gpio_mode.gpio_mode_an" configurationId="p010.gpio_mode"/>
+      <configSetting altId="p014.output.high" configurationId="p014"/>
+      <configSetting altId="p014.gpio_mode.gpio_mode_out.high" configurationId="p014.gpio_mode"/>
+      <configSetting altId="p015.output.high" configurationId="p015"/>
+      <configSetting altId="p015.gpio_mode.gpio_mode_out.high" configurationId="p015.gpio_mode"/>
+      <configSetting altId="p100.sau_spi00.si00" configurationId="p100"/>
+      <configSetting altId="p100.gpio_mode.gpio_mode_peripheral" configurationId="p100.gpio_mode"/>
+      <configSetting altId="p101.sau_spi00.so00" configurationId="p101"/>
+      <configSetting altId="p101.gpio_mode.gpio_mode_peripheral" configurationId="p101.gpio_mode"/>
+      <configSetting altId="p102.sau_spi00.sck00" configurationId="p102"/>
+      <configSetting altId="p102.gpio_mode.gpio_mode_peripheral" configurationId="p102.gpio_mode"/>
+      <configSetting altId="p103.output.high" configurationId="p103"/>
+      <configSetting altId="p103.gpio_mode.gpio_mode_out.high" configurationId="p103.gpio_mode"/>
+      <configSetting altId="p108.jtag_fslash_swd.swdio" configurationId="p108"/>
+      <configSetting altId="p108.gpio_mode.gpio_mode_peripheral" configurationId="p108.gpio_mode"/>
+      <configSetting altId="p109.sau_uart2.txd2" configurationId="p109"/>
+      <configSetting altId="p109.gpio_mode.gpio_mode_peripheral" configurationId="p109.gpio_mode"/>
+      <configSetting altId="p110.sau_uart2.rxd2" configurationId="p110"/>
+      <configSetting altId="p110.gpio_mode.gpio_mode_peripheral" configurationId="p110.gpio_mode"/>
+      <configSetting altId="p112.output.high" configurationId="p112"/>
+      <configSetting altId="p112.gpio_mode.gpio_mode_out.high" configurationId="p112.gpio_mode"/>
+      <configSetting altId="p200.irq.irq0" configurationId="p200"/>
+      <configSetting altId="p200.gpio_irq.gpio_irq_enabled" configurationId="p200.gpio_irq"/>
+      <configSetting altId="p200.gpio_mode.gpio_mode_irq" configurationId="p200.gpio_mode"/>
+      <configSetting altId="p201.output.low" configurationId="p201"/>
+      <configSetting altId="p201.gpio_mode.gpio_mode_out.low" configurationId="p201.gpio_mode"/>
+      <configSetting altId="p206.system.res" configurationId="p206"/>
+      <configSetting altId="p206.gpio_mode.gpio_mode_peripheral" configurationId="p206.gpio_mode"/>
+      <configSetting altId="p207.irq.irq2" configurationId="p207"/>
+      <configSetting altId="p207.gpio_irq.gpio_irq_enabled" configurationId="p207.gpio_irq"/>
+      <configSetting altId="p207.gpio_mode.gpio_mode_irq" configurationId="p207.gpio_mode"/>
+      <configSetting altId="p208.input" configurationId="p208"/>
+      <configSetting altId="p208.gpio_mode.gpio_mode_in" configurationId="p208.gpio_mode"/>
+      <configSetting altId="p208.gpio_pupd.gpio_pupd_ip_up" configurationId="p208.gpio_pupd"/>
+      <configSetting altId="p300.jtag_fslash_swd.swclk" configurationId="p300"/>
+      <configSetting altId="p300.gpio_mode.gpio_mode_peripheral" configurationId="p300.gpio_mode"/>
+      <configSetting altId="sau_spi00.mode.simplespi.free" configurationId="sau_spi00.mode"/>
+      <configSetting altId="sau_spi00.sck00.p102" configurationId="sau_spi00.sck00"/>
+      <configSetting altId="sau_spi00.si00.p100" configurationId="sau_spi00.si00"/>
+      <configSetting altId="sau_spi00.so00.p101" configurationId="sau_spi00.so00"/>
+      <configSetting altId="sau_spi11.pairing.a" configurationId="sau_spi11.pairing"/>
+      <configSetting altId="sau_uart2.mode.custom_40_nomixed_41.a" configurationId="sau_uart2.mode"/>
+      <configSetting altId="sau_uart2.rxd2.p110" configurationId="sau_uart2.rxd2"/>
+      <configSetting altId="sau_uart2.txd2.p109" configurationId="sau_uart2.txd2"/>
+      <configSetting altId="system.mode.custom.free" configurationId="system.mode"/>
+      <configSetting altId="system.res.p206" configurationId="system.res"/>
+    </pincfg>
+  </raPinConfiguration>
+</raConfiguration>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<azone>
+    <rzone name="R7FA0E2094CFJ.rzone"/>
+    <partition>
+        <memory parent="RAM" name="RAM_CM23" size="0x4000" offset="0x0" security="" Pname="CM23"/>
+        <memory parent="FLASH" name="FLASH_CM23" size="0x20000" offset="0x0" security="" Pname="CM23"/>
+        <memory parent="DATA_FLASH" name="DATA_FLASH_CM23" size="0x800" offset="0x0" security="" Pname="CM23"/>
+        <memory parent="OPTION_SETTING_OFS0" name="OPTION_SETTING_OFS0_CM23" size="0x4" offset="0x0" security="" Pname="CM23"/>
+        <memory parent="OPTION_SETTING_OFS1" name="OPTION_SETTING_OFS1_CM23" size="0x4" offset="0x0" security="" Pname="CM23"/>
+        <memory parent="OPTION_SETTING_OSIS" name="OPTION_SETTING_OSIS_CM23" size="0x20" offset="0x0" security="" Pname="CM23"/>
+        <peripheral name="PORT0.CM23" group="PORT">
+            <slot name="P010.CM23" secure="false"/>
+            <slot name="P014.CM23" secure="false"/>
+            <slot name="P015.CM23" secure="false"/>
+        </peripheral>
+        <peripheral name="PORT1.CM23" group="PORT">
+            <slot name="P100.CM23" secure="false"/>
+            <slot name="P101.CM23" secure="false"/>
+            <slot name="P102.CM23" secure="false"/>
+            <slot name="P103.CM23" secure="false"/>
+            <slot name="P108.CM23" secure="false"/>
+            <slot name="P109.CM23" secure="false"/>
+            <slot name="P110.CM23" secure="false"/>
+            <slot name="P112.CM23" secure="false"/>
+        </peripheral>
+        <peripheral name="PORT2.CM23" group="PORT">
+            <slot name="P200.CM23" secure="false"/>
+            <slot name="P201.CM23" secure="false"/>
+            <slot name="P206.CM23" secure="false"/>
+            <slot name="P207.CM23" secure="false"/>
+            <slot name="P208.CM23" secure="false"/>
+        </peripheral>
+        <peripheral name="PORT3.CM23" group="PORT">
+            <slot name="P300.CM23" secure="false"/>
+        </peripheral>
+        <peripheral name="TAU00.CM23" group="TAU" security=""/>
+        <peripheral name="ICU_EXT_IRQ.CM23">
+            <slot name="ICU_EXT_IRQ2.CM23" secure="false"/>
+        </peripheral>
+        <peripheral name="ICU.CM23">
+            <slot name="IRQ4.CM23" secure="false"/>
+            <slot name="IRQ11.CM23" secure="false"/>
+            <slot name="IRQ12.CM23" secure="false"/>
+            <slot name="IRQ13.CM23" secure="false"/>
+            <slot name="IRQ18.CM23" secure="false"/>
+            <slot name="IRQ19.CM23" secure="false"/>
+            <slot name="IRQ31.CM23" secure="false"/>
+            <slot name="IRQ32.CM23" secure="false"/>
+        </peripheral>
+    </partition>
+</azone>

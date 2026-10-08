@@ -1,0 +1,311 @@
+FSP Configuration
+  Board "Custom User Board (Any Device)"
+  R7FA0E2094CFJ
+    part_number: R7FA0E2094CFJ
+    rom_size_bytes: 131072
+    ram_size_bytes: 16384
+    data_flash_size_bytes: 2048
+    package_style: LQFP
+    package_pins: 32
+    number of cores: 1
+    
+  R7FA0E2094CFJ
+  RA0E2
+    series: 0
+    
+  RA0E2 Family
+    Enable inline BSP IRQ functions: Disabled
+    Main Oscillation Stabilization Time: 2^18/MOSC
+    Use Low Voltage Mode: Not Supported
+    
+  RA0E2 Device Options
+    OFS Registers: OFS0 (Option Function Select Register 0) Settings: Enabled
+    OFS Registers: OFS0 (Option Function Select Register 0) Settings: Independent WDT: Start Mode: IWDT is stopped after a reset
+    OFS Registers: OFS0 (Option Function Select Register 0) Settings: Independent WDT: Timeout Period: 2048 cycles
+    OFS Registers: OFS0 (Option Function Select Register 0) Settings: Independent WDT: Dedicated Clock Frequency Divisor: 128
+    OFS Registers: OFS0 (Option Function Select Register 0) Settings: Independent WDT: Window End Position:  0% (no window end position)
+    OFS Registers: OFS0 (Option Function Select Register 0) Settings: Independent WDT: Window Start Position: 100% (no window start position)
+    OFS Registers: OFS0 (Option Function Select Register 0) Settings: Independent WDT: Reset Interrupt Request Select: Reset is enabled
+    OFS Registers: OFS0 (Option Function Select Register 0) Settings: Independent WDT: Stop Control: Stop counting when in Sleep,Snooze modec, or Software Standby
+    OFS Registers: OFS1 (Option Function Select Register 1) Settings: Enabled
+    OFS Registers: OFS1 (Option Function Select Register 1) Settings: Voltage Detection 0 Circuit Start: Voltage monitor 0 reset is disabled after reset
+    OFS Registers: OFS1 (Option Function Select Register 1) Settings: Voltage Detection 0 Level: 1.86 V
+    OFS Registers: OFS1 (Option Function Select Register 1) Settings: Enable or disable Flash Read Protection: Disabled
+    OFS Registers: OFS1 (Option Function Select Register 1) Settings: Flash Read Protection Start: 0x01
+    OFS Registers: OFS1 (Option Function Select Register 1) Settings: Flash Read Protection End: 0x3F
+    OFS Registers: OFS1 (Option Function Select Register 1) Settings: P206/RES pin selection: RES input
+    OFS Registers: OSIS (OCD/Serial Programmer ID setting register) Settings: Disabled
+    OFS Registers: OSIS (OCD/Serial Programmer ID setting register) Settings: ID Code Mode: Unlocked (Ignore ID)
+    OFS Registers: OSIS (OCD/Serial Programmer ID setting register) Settings: ID Code (32 Hex Characters): FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    
+  RA0E2 event data
+  RA Common
+    Main stack size (bytes): 0x400
+    Heap size (bytes): 0
+    Bootloader Secondary XIP: Disabled
+    MCU Vcc (mV): 3300
+    Parameter checking: Disabled
+    Assert Failures: Return FSP_ERR_ASSERTION
+    Clock Registers not Reset Values during Startup: Disabled
+    Main Oscillator Populated: Populated
+    PFS Protect: Enabled
+    C Runtime Initialization : Enabled
+    Early BSP Initialization : Disabled
+    Main Oscillator Clock Source: Crystal or Resonator
+    Subclock Populated: Populated
+    Subclock Drive (Drive capacitance availability varies by MCU): Standard/Normal mode
+    Subclock Stabilization Time (ms): 1000
+    
+  Clocks
+    XTAL 20000000Hz
+    XTAL Div /1
+    HOCO 32MHz
+    HOCO Div /1
+    MOCO Div /1
+    ICLK Src: HOCO
+    TAU CK00 Div /1
+    TAU CK01 Div /1
+    TAU CK02 Div /2
+    TAU CK03 Div /256
+    SAU CK00 Div /2
+    SAU CK01 Div /1
+    SAU CK10 Div /2
+    SAU CK11 Div /1
+    CLKOUT0 Disabled
+    CLKOUT0 Div /1
+    CLKOUT1 Disabled
+    CLKOUT1 Div /1
+    UTASEL Disabled
+    UARTA0 Src: UTASEL
+    UARTA1 Src: UTASEL
+    FSXP Src: LOCO
+    TML FITL0 Src: FSXP
+    TML FITL1 Src: ELC event/No BSP Source Clock
+    TML FITL2 Disabled/No BSP Source Clock
+    
+  Pin Configurations
+    R7FA0E2094CFJ.pincfg -> g_bsp_pin_cfg
+      P008 30 - - - - Disabled - - "ADC0: AN002" - None - - 
+      P009 29 - - - - Disabled - - "ADC0: AN003" - None - - 
+      P010 32 ADC0_AN000 - - - "Analog mode" - - "ADC0: AN000; SYSTEM: VREFH0" - I - - 
+      P011 31 - - - - Disabled - - "ADC0: AN001; SYSTEM: VREFL0" - None - - 
+      P012 28 - - - - Disabled - - "ADC0: AN004" - None - - 
+      P013 27 - - - - Disabled - - "ADC0: AN005" - None - - 
+      P014 26 GPIO MCU_LORA_RXEN - - "Output mode (Initial High)" - - "ADC0: AN006" - IO - - 
+      P015 25 GPIO MCU_LORA_NSS - - "Output mode (Initial High)" - - "ADC0: AN007; IRQ: IRQ1" - IO - - 
+      P100 24 SAU_SPI00_SI00 MCU_LORA_SI - None "Peripheral mode" - - "ADC0: AN022; IICA0: SCLA0; IRQ: IRQ2; SAU_I2C00: SDA00; SAU_SPI00: SI00; SAU_UART0: RXD0; TAU01: TI01; TAU01: TO01; TAU04: TI04; TAU04: TO04; UARTA0: RXDA0" - I - - 
+      P101 23 SAU_SPI00_SO00 MCU_LORA_SO - None "Peripheral mode" - - "ADC0: AN021; IICA0: SDAA0; IRQ: IRQ3; SAU_SPI00: SO00; SAU_UART0: TXD0; TAU00: TI00; TAU07: TI07; TAU07: TO07; UARTA0: TXDA0" - O - - 
+      P102 22 SAU_SPI00_SCK00 MCU_LORA_SCK - None "Peripheral mode" - - "CGC: PCLBUZ0; IICA1: SCLA1; IRQ: IRQ4; RTC: RTCOUT; SAU_I2C00: SCL00; SAU_SPI00: SCK00; TAU00: TO00; TAU06: TI06; TAU06: TO06; UARTA1: RXDA1" - IO - - 
+      P103 21 GPIO MCU_LED - - "Output mode (Initial High)" - - "IICA1: SDAA1; IRQ: IRQ5; SAU_SPI00: SSI00; TAU05: TI05; TAU05: TO05; UARTA1: TXDA1" - IO - - 
+      P108 17 JTAG/SWD_SWDIO - - - "Peripheral mode" - - "JTAG/SWD: SWDIO; TAU03: TI03; TAU03: TO03" - IO - - 
+      P109 18 SAU_UART2_TXD2 MCU_GNSS_TXD - None "Peripheral mode" - - "CGC: PCLBUZ1; IICA0: SDAA0; IRQ: IRQ4; SAU_SPI20: SO20; SAU_UART2: TXD2; TAU02: TI02; TAU02: TO02; UARTA0: TXDA0" - O - - 
+      P110 19 SAU_UART2_RXD2 MCU_GNSS_RXD - None "Peripheral mode" - - "IICA0: SCLA0; IRQ: IRQ3; SAU_I2C20: SDA20; SAU_SPI20: SI20; SAU_UART2: RXD2; TAU01: TI01; TAU01: TO01; UARTA0: RXDA0" - I - - 
+      P112 20 GPIO MCU_LORA_RST - - "Output mode (Initial High)" - - "IRQ: IRQ2; SAU_I2C20: SCL20; SAU_SPI00: SSI00; SAU_SPI20: SCK20; TAU03: TI03; TAU03: TO03" - IO - - 
+      P200 15 IRQ_IRQ0 - - IRQ0 "IRQ mode" - - "IRQ: IRQ0" - I - - 
+      P201 14 GPIO MCU_LORA_TXEN - - "Output mode (Initial Low)" - - "CGC: PCLBUZ0; IRQ: IRQ5; RTC: RTCOUT; SAU_I2C11: SCL11; SAU_SPI00: SSI00; SAU_SPI11: SCK11; TAU05: TI05; TAU05: TO05" - IO - - 
+      P206 13 SYSTEM_RES MCU_RST - - "Peripheral mode" - - "SYSTEM: RES" - IO - - 
+      P207 12 IRQ_IRQ2 MCU_LORA_DIO1 - IRQ2 "IRQ mode" - - "IICA1: SCLA1; IRQ: IRQ2; SAU_I2C01: SDA01; TAU00: TO00; UARTA0: RXDA0" - I - - 
+      P208 11 GPIO MCU_LORA_BUSY - None "Input mode" - - "IICA1: SDAA1; IRQ: IRQ3; SAU_I2C01: SCL01; TAU00: TI00; UARTA0: TXDA0" - IO - - 
+      P212 6 - - - - Disabled - - "CGC: X1; IICA0: SCLA0; IRQ: IRQ1; SAU_I2C11: SDA11; SAU_SPI11: SI11; SAU_UART1: RXD1; TAU00: TO00; TAU03: TI03; TAU03: TO03; UARTA0: RXDA0" - None - - 
+      P213 5 - - - - Disabled - - "CGC: EXCLK; CGC: X2; IICA0: SDAA0; IRQ: IRQ0; SAU_SPI11: SO11; SAU_UART1: TXD1; TAU00: TI00; TAU02: TI02; TAU02: TO02; UARTA0: TXDA0" - None - - 
+      P214 3 - - - - Disabled - - "CGC: XCOUT" - None - - 
+      P215 2 - - - - Disabled - - "CGC: XCIN" - None - - 
+      P300 16 JTAG/SWD_SWCLK - - - "Peripheral mode" - - "JTAG/SWD: SWCLK; TAU04: TI04; TAU04: TO04" - IO - - 
+      P407 8 - - - - Disabled - - "CGC: PCLBUZ0; IICA1: SDAA1; IRQ: IRQ4; RTC: RTCOUT; SAU_I2C11: SCL11; SAU_SPI11: SCK11" - None - - 
+      P913 10 - - - - Disabled - - "IICA0: SDAA0" - None - - 
+      P914 9 - - - - Disabled - - "IICA0: SCLA0" - None - - 
+      VCC 7 SYSTEM_VCC - - - - - - - - IO "Read only" - 
+      VCL 1 SYSTEM_VCL - - - - - - - - IO "Read only" - 
+      VSS 4 SYSTEM_VSS - - - - - - - - IO "Read only" - 
+    
+  User Events
+    
+  User Event Links
+    
+  Linker Section Mappings
+    *bsp_linker.?*(.rodata.*): FLASH Constant Data (OFS Gap)
+    *startup.?*(.text.Reset_Handler): FLASH Code (OFS Gap)
+    *system.?*(.text.*): FLASH Code (OFS Gap)
+    *(.bss.g_heap): RAM Uninitialized
+    *(.bss.g_main_stack): RAM Uninitialized
+    
+  Module "I/O Port (r_ioport)"
+    Parameter Checking: Default (BSP)
+    CCD Support: Not Supported
+    
+  Module "Timer, Independent Channel, 16-bit and 8-bit Timer Operation (r_tau)"
+    Parameter Checking: Default (BSP)
+    Interrupt Support: Enabled
+    Pin Output Support: Disabled
+    Pin Input Support: Disabled
+    Extra Input Mode Support: Disabled
+    8-Bit Mode Support: Disabled
+    
+  Module "UART (r_sau_uart)"
+    Parameter Checking: Enabled
+    Critical Section Guarding: Disabled
+    DTC Support: Enable
+    Enable Single Channel: Disable
+    Enable Fixed Baudrate: Enable
+    
+  Module "Flash (r_flash_lp)"
+    Parameter Checking: Default (BSP)
+    Code Flash Programming: Disabled
+    Code Flash Background Operation Support With Bank Programming: Not Supported
+    Data Flash Programming: Enabled
+    Data Flash Background Operation Support: Enabled
+    Instant Bank Swap (No Reset Required): Not Supported
+    
+  Module "SPI (r_sau_spi)"
+    Parameter Checking: Enabled
+    Critical Section Guarding: Disabled
+    Enable Single Channel: Disabled
+    Transfer Operating Mode: Transmission/Reception
+    DTC Support: Disabled
+    Multiple Slave Compatibility Mode: Disabled
+    Continuous Transfer Mode: Enabled
+    
+  Module "External IRQ (r_icu)"
+    Parameter Checking: Default (BSP)
+    
+  Module "Transfer (r_dtc)"
+    Parameter Checking: Default (BSP)
+    Linker section to keep DTC vector table: .fsp_dtc_vector_table
+    
+  Module "ADC (r_adc_d)"
+    Parameter Checking: Default (BSP)
+    Internal Reference Voltage Support: Enabled
+    Snooze Mode Support: Disabled
+    Interrupt Support: Enabled
+    
+  Module "Event Link Controller (r_elc)"
+    Parameter Checking: Enabled
+    
+  Module "Realtime Clock (r_rtc_c)"
+    Parameter Checking: Enabled
+    
+  HAL
+    Instance "g_ioport I/O Port (r_ioport)"
+      Name: g_ioport
+      1st Port ELC Trigger Source: Disabled
+      2nd Port ELC Trigger Source: Disabled
+      3rd Port ELC Trigger Source: Disabled
+      4th Port ELC Trigger Source: Disabled
+      Pin Configuration Name: g_bsp_pin_cfg
+      
+    Instance "g_timer0 Timer, Independent Channel, 16-bit and 8-bit Timer Operation (r_tau)"
+      General: Name: g_timer0
+      General: Channel: 0
+      General: Function: Interval Timer
+      General: Bit Timer Mode: 16-bit timer
+      General: Operation Clock: CK00
+      General: Period: 500
+      General: Period Unit: Microseconds
+      General: Period (Higher 8-bit timer): 0
+      General: Period Unit (Higher 8-bit timer): Raw Counts
+      Input: Input Source: No input signal
+      Input: Trigger Edge: Trigger Edge Rising
+      Input: Input Filter: Disabled
+      Output: Initial Output: Disabled
+      Interrupts: Setting of starting count and interrupt: Timer interrupt is generated when counting is started/Start trigger is valid during counting operation.
+      Interrupts: Callback: timer0_callback
+      Interrupts: Interrupt Priority: Priority 2
+      Interrupts: Higher 8-bit Interrupt Priority: Disabled
+      
+    Instance "g_uart0 UART (r_sau_uart)"
+      General: Name: g_uart0
+      General: Channel: 2
+      General: Data Bits: 8 bits
+      General: Parity: None
+      General: Stop Bits: 1 bit
+      General: Bit Order: LSB First
+      Baud: Baud Rate: 115200
+      Extra: Operation Clock: CKm0
+      Extra: Tx Signal Level: Standard
+      Interrupts: Callback: g_uart0_callback
+      Interrupts: Transmit End Interrupt Priority: Priority 2
+      Interrupts: Receive End Interrupt Priority: Priority 2
+      Interrupts: Error Interrupt Priority: Disabled
+      
+      Instance "g_transfer0 Transfer (r_dtc) SAU1 UART TXI2 (SAU UART TX 2/I2C 20/SPI 20)"
+        Name: g_transfer0
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Fixed
+        Source Address Mode: Incremented
+        Repeat Area (Unused in Normal Mode): Source
+        Interrupt Frequency: After all transfers have completed
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Number of Transfer Descriptors: 1
+        Activation Source: SAU1 UART TXI2 (SAU UART TX 2/I2C 20/SPI 20)
+        
+      Instance "g_transfer1 Transfer (r_dtc) SAU1 UART RXI2 (SAU UART RX 2/I2C 21/SPI 21)"
+        Name: g_transfer1
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Incremented
+        Source Address Mode: Fixed
+        Repeat Area (Unused in Normal Mode): Destination
+        Interrupt Frequency: After all transfers have completed
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Number of Transfer Descriptors: 1
+        Activation Source: SAU1 UART RXI2 (SAU UART RX 2/I2C 21/SPI 21)
+        
+    Instance "g_flash0 Flash (r_flash_lp)"
+      Name: g_flash0
+      Data Flash Background Operation: Enabled
+      Callback: g_flash_callback
+      Flash Ready Interrupt Priority: Priority 3
+      
+    Instance "g_spi0 SPI (r_sau_spi)"
+      Name: g_spi0
+      Channel: 00
+      Operating Mode: Master
+      Operation Clock: CKm0
+      Transfer Mode : Single transfer mode
+      Bit Order: MSB First
+      Data Phase: Data sampling on even edge, data variation on odd edge
+      Clock Phase: Low when idle
+      Bitrate: 100000
+      Callback: sau_spi_callback
+      Transmit End Interrupt Priority: Priority 2
+      
+    Instance "g_external_irq0 External IRQ (r_icu)"
+      Name: g_external_irq0
+      Channel: 2
+      Trigger: Rising
+      Digital Filtering: Not Supported
+      Filter Source: Not Supported
+      Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): Not Supported
+      Callback: lora_dio1_callback
+      Pin Interrupt Priority: Priority 2
+      
+    Instance "g_adc0 ADC (r_adc_d)"
+      General: Name: g_adc0
+      General: Resolution: 12-Bit
+      General: Conversion operation: One-shot
+      General: Operation trigger: Wait
+      General: Operation voltage: Normal 1
+      General: Conversion Clock (fAD): PCLK
+      Input: Channel Selection Mode: Scan
+      Input: A/D Input channel: Channel 0 (channels 0-3 in scan mode)
+      Input: Negative Side Reference Voltage: VSS
+      Input: Positive Side Reference Voltage: VCC
+      Interrupts: Callback: g_adc0_callback
+      Interrupts: Scan End Interrupt Priority: Priority 2
+      Interrupts: Start trigger source: Software
+      Interrupts: Conversion Result upper/lower bound value setting: Generates an interrupt request (INTAD): The interrupt signal is output when the ADLL register <= the ADCRn register <= the ADUL register
+      Interrupts: Conversion Result upper/lower bound value setting: Upper bound (ADUL) value: 255
+      Interrupts: Conversion Result upper/lower bound value setting: Lower bound (ADLL) value: 0
+      
+    Instance "g_elc Event Link Controller (r_elc)"
+      Name: g_elc
+      
+    Instance "g_rtc0 Realtime Clock (r_rtc_c)"
+      Name: g_rtc0
+      Operation clock: FSXP
+      Callback: g_rtc0_callback
+      Interrupt Priority: Priority 1
+      

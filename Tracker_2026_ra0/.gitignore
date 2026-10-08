@@ -1,0 +1,32 @@
+# Renesas e2 studio build output
+/Debug/
+/Release/
+
+# Compiler, linker, and generated build files
+*.o
+*.o.in
+*.d
+*.elf
+*.axf
+*.srec
+*.mot
+*.hex
+*.bin
+*.map
+*.lst
+*.cref
+*.sbd
+compile_commands.json
+
+# Local debug logs
+JLinkLog.log
+*.log
+
+# Common host-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python cache files
+__pycache__/
+*.py[cod]
