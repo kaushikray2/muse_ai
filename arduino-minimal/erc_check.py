@@ -94,17 +94,21 @@ for node in tree:
                           fnum(at[3]) if len(at) > 3 else 0.0,
                           mir[1] if mir else None, fp))
 
-def rot_pt(x, y, deg, ccw=True):
-    r = math.radians(deg if ccw else -deg)
+def rot_pt(x, y, deg):
+    """KiCad placement transform for a library pin (px, py) [Y-up library
+    frame] on a symbol rotated by deg clockwise: converts to Y-down sheet.
+    (X + px*cos - py*sin, Y - px*sin - py*cos).  Verified empirically
+    against KiCad 10 ERC pin positions, 2026-10-08."""
+    r = math.radians(deg)
     c, s = math.cos(r), math.sin(r)
-    return (round(x * c - y * s, 3), round(x * s + y * c, 3))
+    return (round(x * c - y * s, 3), round(-(x * s + y * c), 3))
 
-def pin_abs(px, py, X, Y, rot, mirror, ccw):
+def pin_abs(px, py, X, Y, rot, mirror):
     if mirror == "x":
         px = -px
     elif mirror == "y":
         py = -py
-    rx, ry = rot_pt(px, py, rot, ccw)
+    rx, ry = rot_pt(px, py, rot)
     return (round(X + rx, 3), round(Y + ry, 3))
 
 # choose rotation convention empirically: maximize wire-endpoint matches
@@ -129,24 +133,18 @@ for node in tree:
         at = find(node, "at")
         labels[(fnum(at[1]), fnum(at[2]))] = node[1]
 
-def build_pins(ccw):
+def build_pins():
     pins = []  # (ref, num, name, etype, pos)
     for ref, value, lib_id, X, Y, rot, mirror, fp in instances:
         for num, name, etype, px, py in lib_pins.get(lib_id, []):
-            pins.append((ref, num, name, etype, pin_abs(px, py, X, Y, rot, mirror, ccw)))
+            pins.append((ref, num, name, etype, pin_abs(px, py, X, Y, rot, mirror)))
     return pins
 
-def score(ccw):
-    pins = build_pins(ccw)
-    pset = set(p[4] for p in pins)
-    return sum(1 for e in endpoints if e in pset or e in junctions)
-
-s_ccw, s_cw = score(True), score(False)
-CCW = s_ccw >= s_cw
-print(f"[info] rotation convention: {'CCW' if CCW else 'CW'} "
-      f"(matched {max(s_ccw, s_cw)}/{len(endpoints)} wire endpoints)")
-
-pins = build_pins(CCW)
+pins = build_pins()
+matched = sum(1 for e in endpoints
+              if e in set(p[4] for p in pins) or e in junctions)
+print(f"[info] pin transform: KiCad Y-up->Y-down "
+      f"(matched {matched}/{len(endpoints)} wire endpoints)")
 
 # ---------- nets via union-find ----------
 parent = {}
@@ -209,6 +207,14 @@ for ref, value, lib_id, X, Y, rot, mirror, fp in instances:
             if p[0] == ref:
                 pwr_pos[value].append(p[4])
 for value, positions in pwr_pos.items():
+    for pos in positions[1:]:
+        union(positions[0], pos)
+
+# KiCad local labels with the same name are the same net
+label_pos = defaultdict(list)
+for lp, txt in labels.items():
+    label_pos[txt].append(lp)
+for txt, positions in label_pos.items():
     for pos in positions[1:]:
         union(positions[0], pos)
 
