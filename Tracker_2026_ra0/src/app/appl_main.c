@@ -82,7 +82,7 @@ int app_main(void) {
               if (sleep_30s_ticks >= 6000u) {
                 sleep_30s_ticks = 0u;
 
-                /* 1. Stop active peripherals & disable TAU IRQ line */
+                /* 1. Stop the 0.5ms scheduler timer & disable its IRQ line */
                 R_TAU_Stop(&g_timer0_ctrl);
                 R_BSP_IrqDisable(g_timer0_cfg.cycle_end_irq);
                 R_BSP_IrqClearPending(g_timer0_cfg.cycle_end_irq);
@@ -90,28 +90,56 @@ int app_main(void) {
                 /* 2. Disable external IRQs */
                 R_ICU_ExternalIrqDisable(&g_external_irq0_ctrl);
 
-                /* 3. RESET SECONDS COUNTER TO 0:
-                   Since 30s elapsed while awake, the current time is at :30s.
-                   Resetting tm_sec to 0 forces the next :00 minute boundary
-                   to occur in a full 60 seconds. */
+                /* 3. Compute wake time = now + 60s (absolute RTC alarm).
+                   No seconds reset: the alarm matches on sec+min+hour, so it
+                   fires exactly 60s from now regardless of the current
+                   seconds value. */
                 rtc_time_t current_time;
                 R_RTC_C_CalendarTimeGet(&g_rtc0_ctrl, &current_time);
-                current_time.tm_sec = 0;
-                R_RTC_C_CalendarTimeSet(&g_rtc0_ctrl, &current_time);
 
-                /* 4. Configure the 1-minute periodic interval */
-                R_RTC_C_PeriodicIrqRateSet(&g_rtc0_ctrl, RTC_PERIODIC_IRQ_SELECT_1_MINUTE);
+                uint8_t wake_sec  = current_time.tm_sec;
+                uint8_t wake_min  = current_time.tm_min + 1u; /* +60s */
+                uint8_t wake_hour = current_time.tm_hour;
+                if (wake_min >= 60u) {
+                  wake_min -= 60u;
+                  wake_hour++;
+                  if (wake_hour >= 24u) {
+                    wake_hour = 0u;
+                  }
+                }
 
-                /* 5. Clear pending RTC flags & enable NVIC IRQ line */
-                R_BSP_IrqClearPending(g_rtc0_cfg.periodic_irq);
-                R_BSP_IrqEnable(g_rtc0_cfg.periodic_irq);
+                rtc_alarm_time_t alarm_time;
+                alarm_time.time.tm_sec  = wake_sec;
+                alarm_time.time.tm_min  = wake_min;
+                alarm_time.time.tm_hour = wake_hour;
+                alarm_time.time.tm_mday = current_time.tm_mday;
+                alarm_time.time.tm_mon  = current_time.tm_mon;
+                alarm_time.time.tm_year = current_time.tm_year;
+                alarm_time.time.tm_wday = current_time.tm_wday;
+                alarm_time.sec_match  = true;
+                alarm_time.min_match  = true;
+                alarm_time.hour_match = true;
+                alarm_time.mday_match = false;
+                alarm_time.mon_match  = false;
+                alarm_time.year_match = false;
+                alarm_time.enb        = true;
+                R_RTC_C_CalendarAlarmSet(&g_rtc0_ctrl, &alarm_time);
 
-                /* 6. Sleep for 60 seconds */
+                /* 4. Clear any pending alarm IRQ & enable its NVIC line */
+                R_BSP_IrqClearPending(g_rtc0_cfg.alarm_irq);
+                R_BSP_IrqEnable(g_rtc0_cfg.alarm_irq);
+
+                /* 5. Sleep until the alarm fires (~60s) */
                 __DSB();
                 __WFI();
                 __ISB();
 
-                /* 7. Resume execution after 1 minute */
+                /* 6. Wake: shut off the alarm IRQ, then RESTART the
+                   scheduler timer (it was stopped in step 1). */
+                R_BSP_IrqDisable(g_rtc0_cfg.alarm_irq);
+                R_BSP_IrqClearPending(g_rtc0_cfg.alarm_irq);
+                R_TAU_Start(&g_timer0_ctrl);
+                R_BSP_IrqClearPending(g_timer0_cfg.cycle_end_irq);
                 R_BSP_IrqEnable(g_timer0_cfg.cycle_end_irq);
               }
             } break;
@@ -192,8 +220,8 @@ void app_main_ini(void) {
   /* Open the external IRQ module to apply your FSP settings */
   //R_ICU_ExternalIrqOpen(&g_external_irq0_ctrl, &g_external_irq0_cfg);
 
-  /* Initialize the RTC once, but leave the periodic IRQ disabled until case 4
-     starts the one-minute sleep wake-up. */
+  /* Initialize the RTC once, but leave its IRQs disabled until case 4
+     arms the 60-second alarm before WFI. */
   init_rtc(&g_rtc0_ctrl, &g_rtc0_cfg);
 
   service_timer_ini(); /* Reset and initialize the application timer state
@@ -224,7 +252,8 @@ void init_rtc(rtc_ctrl_t *p_ctrl, rtc_cfg_t const *p_cfg) {
   R_RTC_C_Open(p_ctrl, p_cfg);
   R_RTC_C_CalendarTimeSet(p_ctrl, &initial_time);
 
-  /* R_RTC_C_Open enables the periodic IRQ. Disable it here so the first
-     timeout starts only when case 4 calls PeriodicIrqRateSet before WFI. */
+  /* R_RTC_C_Open enables the RTC IRQs. Disable them here so the first
+     wake-up is armed only when case 4 sets the 60-second alarm before WFI. */
   R_BSP_IrqDisable(p_cfg->periodic_irq);
+  R_BSP_IrqDisable(p_cfg->alarm_irq);
 }
