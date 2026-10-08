@@ -12,10 +12,9 @@
  *                5 V ADC reference. For higher voltages use a divider
  *                and set DIVIDER_RATIO below.
  *   Battery-  -> Arduino GND (common ground, required)
- *   Other end of 12 ohm resistor -> MOSFET switch -> GND
- *   D7        -> MOSFET gate (through a gate driver / transistor if needed;
- *                an Arduino pin cannot drive a PMOS high-side gate directly
- *                when the rail is above 5 V -- use a small NPN level shifter)
+ *   Other end of 12 ohm resistor -> NMOS drain; NMOS source -> GND
+ *   (low-side switch). D7 drives the gate directly -- use a logic-level
+ *   NMOS (Vgs(th) well under 5 V).
  *   USB       -> PC (115200 baud)
  *
  * Safety notes:
@@ -39,8 +38,8 @@
 const uint8_t VBAT_PIN = A0;     // cell voltage sense
 const uint8_t LOAD_PIN = 7;      // MOSFET gate drive
 
-// Set to HIGH if driving the gate high turns the load ON,
-// LOW if your driver stage inverts it.
+// Low-side NMOS: gate HIGH turns the load ON. Flip to LOW only if your
+// driver stage inverts the signal.
 const bool LOAD_ON_LEVEL = HIGH;
 
 // Voltage divider on A0: VBAT -- R1 -- A0 -- R2 -- GND
