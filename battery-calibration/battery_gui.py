@@ -138,7 +138,7 @@ class BatteryCalApp(tk.Tk):
         ttk.Label(conn, text="Baud:").pack(side="left", padx=4)
         self.baud_var = tk.StringVar(value=str(BAUD_DEFAULT))
         ttk.Combobox(conn, textvariable=self.baud_var, width=8,
-                     values=["9600", "57600", "115200"]).pack(side="left", padx=4)
+                     values=["9600", "38400", "57600", "115200"]).pack(side="left", padx=4)
         self.connect_btn = ttk.Button(conn, text="Connect", command=self._toggle_connect)
         self.connect_btn.pack(side="left", padx=8)
         self.conn_status = ttk.Label(conn, text="disconnected", foreground="red")
@@ -150,12 +150,12 @@ class BatteryCalApp(tk.Tk):
         cfg.pack(fill="x", padx=8, pady=4)
         self.cfg_vars = {}
         fields = [
-            ("cutoff_v",   "Cutoff voltage (V) -- PMOS opens, cell = dead", "3.0"),
-            ("interval_s", "Sample interval (s)",                            "1.0"),
-            ("load_ohms",  "Load resistance (ohm)",                          "12.0"),
-            ("max_hours",  "Max test time (hours, failsafe)",                "12"),
-            ("table_pts",  "Calibration table points",                       "25"),
-            ("nominal",    "Nominal capacity (mAh, optional ref)",            ""),
+            ("cutoff_v",    "Cutoff voltage (V) -- MOSFET opens, cell = dead", "3.0"),
+            ("interval_ms", "Sample interval (ms, min 200)",                   "1000"),
+            ("load_ohms",   "Load resistance (ohm)",                           "12.0"),
+            ("max_hours",   "Max test time (hours, failsafe)",                 "12"),
+            ("table_pts",   "Calibration table points",                        "25"),
+            ("nominal",     "Nominal capacity (mAh, optional ref)",             ""),
         ]
         for i, (key, label, default) in enumerate(fields):
             ttk.Label(cfg, text=label).grid(row=i // 2, column=(i % 2) * 2,
@@ -288,17 +288,21 @@ class BatteryCalApp(tk.Tk):
     def _read_config(self):
         try:
             cutoff   = float(self.cfg_vars["cutoff_v"].get())
-            interval = float(self.cfg_vars["interval_s"].get())
+            interval = float(self.cfg_vars["interval_ms"].get())
             load     = float(self.cfg_vars["load_ohms"].get())
             max_h    = float(self.cfg_vars["max_hours"].get())
             n_pts    = int(self.cfg_vars["table_pts"].get())
         except ValueError:
             messagebox.showerror("Bad config", "Cutoff/interval/load/hours/points must be numbers.")
             return None
-        if not (0.5 <= cutoff <= 5.0 and interval >= 0.2 and load > 0
+        if interval < 200:
+            interval = 200
+            self.cfg_vars["interval_ms"].set("200")
+            self._log("Sample interval below 200 ms minimum -- overridden to 200 ms.")
+        if not (0.5 <= cutoff <= 5.0 and load > 0
                 and max_h > 0 and n_pts >= 2):
             messagebox.showerror("Bad config", "Check ranges: cutoff 0.5-5 V, "
-                                 "interval >= 0.2 s, load > 0, points >= 2.")
+                                 "load > 0, points >= 2.")
             return None
         return dict(cutoff=cutoff, interval=interval, load=load,
                     max_h=max_h, n_pts=n_pts)
@@ -311,7 +315,7 @@ class BatteryCalApp(tk.Tk):
                 "Start discharge test",
                 f"Cell must be FULLY CHARGED.\n\n"
                 f"Discharge through {cfg['load']:.1f} ohm until "
-                f"{cfg['cutoff']:.2f} V, sampling every {cfg['interval']:.1f} s.\n"
+                f"{cfg['cutoff']:.2f} V, sampling every {cfg['interval']:.0f} ms.\n"
                 f"Start now?"):
             return
         self.cutoff_v = cfg["cutoff"]
@@ -324,7 +328,7 @@ class BatteryCalApp(tk.Tk):
         self.test_start_wall = time.time()
         self.testing = True
         cutoff_mv = int(round(cfg["cutoff"] * 1000))
-        interval_ms = int(round(cfg["interval"] * 1000))
+        interval_ms = int(round(cfg["interval"]))
         max_min = int(round(cfg["max_h"] * 60))
         self._send(f"START {cutoff_mv} {interval_ms} {max_min}")
         self.start_btn.config(state="disabled")
