@@ -88,8 +88,23 @@ int app_main(void) {
                 R_BSP_IrqDisable(g_timer0_cfg.cycle_end_irq);
                 R_BSP_IrqClearPending(g_timer0_cfg.cycle_end_irq);
 
-                /* 2. Disable external IRQs */
+                /* 2. Disable external IRQs (LoRa DIO1) */
                 R_ICU_ExternalIrqDisable(&g_external_irq0_ctrl);
+
+                /* 2b. Disable peripheral IRQs that would wake the CPU:
+                   - UART RXI: GPS streams NMEA continuously, every byte
+                     would wake us immediately.
+                   - UART TXI: avoid a stale TX-complete waking us.
+                   - ADC scan-end and SPI TEI: safety, in case a conversion
+                     or transfer is still in flight. */
+                R_BSP_IrqDisable(g_uart0_cfg.rxi_irq);
+                R_BSP_IrqDisable(g_uart0_cfg.txi_irq);
+                R_BSP_IrqClearPending(g_uart0_cfg.rxi_irq);
+                R_BSP_IrqClearPending(g_uart0_cfg.txi_irq);
+                R_BSP_IrqDisable(g_adc0_cfg.scan_end_irq);
+                R_BSP_IrqClearPending(g_adc0_cfg.scan_end_irq);
+                R_BSP_IrqDisable(g_spi0_cfg.tei_irq);
+                R_BSP_IrqClearPending(g_spi0_cfg.tei_irq);
 
                 /* 3. Sleep ~60s using the 1-second RTC periodic IRQ.
                    (RA0E2 alarm is minute-resolution only, so count 60
@@ -112,6 +127,18 @@ int app_main(void) {
                 R_TAU_Start(&g_timer0_ctrl);
                 R_BSP_IrqClearPending(g_timer0_cfg.cycle_end_irq);
                 R_BSP_IrqEnable(g_timer0_cfg.cycle_end_irq);
+
+                /* 5. Re-enable the peripheral IRQs disabled in step 2b.
+                   Clear pending first: the GPS kept streaming NMEA during
+                   sleep, so stale RX flags must not fire immediately. */
+                R_BSP_IrqClearPending(g_uart0_cfg.rxi_irq);
+                R_BSP_IrqClearPending(g_uart0_cfg.txi_irq);
+                R_BSP_IrqEnable(g_uart0_cfg.rxi_irq);
+                R_BSP_IrqEnable(g_uart0_cfg.txi_irq);
+                R_BSP_IrqClearPending(g_adc0_cfg.scan_end_irq);
+                R_BSP_IrqEnable(g_adc0_cfg.scan_end_irq);
+                R_BSP_IrqClearPending(g_spi0_cfg.tei_irq);
+                R_BSP_IrqEnable(g_spi0_cfg.tei_irq);
               }
             } break;
       case 5u:
