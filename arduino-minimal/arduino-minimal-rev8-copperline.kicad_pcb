@@ -12,7 +12,7 @@
   (net 4 "/TX")
   (net 5 "Net-(U1-AREF)")
   (net 6 "Net-(U1-~{RESET}{slash}PC6)")
-  (net_class "Default" "" (clearance 0.150000) (trace_width 0.200000) (via_dia 0.600000) (via_drill 0.300000) "VCC" "GND" "/RX" "/TX" "Net-(U1-AREF)" "Net-(U1-~{RESET}{slash}PC6)")
+  (net_class "Default" "" (clearance 0.150000) (trace_width 0.200000) (via_dia 0.600000) (via_drill 0.300000) (add_net "VCC") (add_net "GND") (add_net "/RX") (add_net "/TX") (add_net "Net-(U1-AREF)") (add_net "Net-(U1-~{RESET}{slash}PC6)"))
   (footprint "Copperline:PAD" (layer "F.Cu") (tstamp cl-1) (at 9.550000 16.000000)
     (fp_text reference "C1" (at 0 -1.5) (layer "F.SilkS"))
     (fp_text value "copperline" (at 0 1.5) (layer "F.Fab"))
