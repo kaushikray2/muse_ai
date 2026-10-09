@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" role="img" aria-label="Orbit stacked logo">
+  <title>Orbit — stacked</title>
+  <g transform="translate(0,0)">
+    <ellipse cx="100" cy="80" rx="78" ry="46" fill="none" stroke="#7DB7A7" stroke-width="7" transform="rotate(-20 100 80)"/>
+    <circle cx="100" cy="80" r="17" fill="#FFFFFF"/>
+    <circle cx="100" cy="80" r="17" fill="none" stroke="#7DB7A7" stroke-width="3" opacity="0.35"/>
+    <circle cx="173.3" cy="78.9" r="11" fill="#7DB7A7"/>
+    <circle cx="173.3" cy="78.9" r="16.5" fill="none" stroke="#7DB7A7" stroke-width="2.5" opacity="0.5"/>
+  </g>
+  <text x="100" y="215" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="56" font-weight="700" letter-spacing="12" fill="#FFFFFF">ORBIT</text>
+</svg>
