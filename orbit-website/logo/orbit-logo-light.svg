@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 200" role="img" aria-label="Orbit logo for light backgrounds">
-  <title>Orbit — for light backgrounds</title>
-  <g transform="translate(0,0)">
-    <ellipse cx="100" cy="100" rx="78" ry="46" fill="none" stroke="#4E8A7B" stroke-width="7" transform="rotate(-20 100 100)"/>
-    <circle cx="100" cy="100" r="17" fill="#14201D"/>
-    <circle cx="173.3" cy="98.9" r="11" fill="#4E8A7B"/>
-    <circle cx="173.3" cy="98.9" r="16.5" fill="none" stroke="#4E8A7B" stroke-width="2.5" opacity="0.5"/>
-  </g>
-  <text x="212" y="118" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="10" fill="#14201D">ORBIT</text>
+  <title>Orbit logo for light backgrounds</title>
+  <ellipse cx="100" cy="100" rx="78" ry="46" fill="none" stroke="#4E8A7B" stroke-width="7" transform="rotate(-20 100 100)"/>
+  <rect x="84" y="70" width="32" height="60" rx="9" fill="#14201D" stroke="#4E8A7B" stroke-width="4"/>
+  <circle cx="100" cy="100" r="7" fill="#4E8A7B"/>
+  <circle cx="171.4" cy="98.5" r="10" fill="#4E8A7B"/>
+  <circle cx="44.4" cy="144.7" r="10" fill="#4E8A7B"/>
+  <circle cx="60.2" cy="68.5" r="10" fill="#4E8A7B"/>
+  <text x="212" y="118" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="64" letter-spacing="10" fill="#14201D">ORBIT</text>
 </svg>
