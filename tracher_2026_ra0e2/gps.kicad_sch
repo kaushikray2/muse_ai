@@ -5225,6 +5225,66 @@
 		)
 		(uuid "27768cd6-5a0a-44f2-b706-171bff74bc4f")
 	)
+	(label "MCU_GNSS_EXTINT"
+		(at 53.34 175.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3a352309-40a7-4c04-a66b-0607b142fc2c")
+	)
+	(label "MCU_GNSS_RXD"
+		(at 80.01 148.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a2030243-f2db-42ac-9062-806b9f3874ca")
+	)
+	(label "MCU_GNSS_TXD"
+		(at 123.19 151.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b266b479-1733-45ad-a740-e5b4d00be539")
+	)
+	(label "MCU_GNSS_RXD"
+		(at 53.34 180.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d78653d2-02a3-4ff1-b869-c2e9b64bdfaf")
+	)
+	(label "GNSS_RF_IN"
+		(at 115.57 34.29 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f701fde1-b6cf-49ba-8be6-30ea99b80183")
+	)
+	(label "MCU_GNSS_SAFEBOOT"
+		(at 53.34 182.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fdc9be32-4222-4b3d-b680-f659a701c88f")
+	)
 	(hierarchical_label "MCU_GNSS_EN"
 		(shape input)
 		(at 279.4 82.55 180)
@@ -5235,16 +5295,6 @@
 			(justify right bottom)
 		)
 		(uuid "2b9751e6-8c85-462c-a8f3-72f8e5ad85ba")
-	)
-	(label "MCU_GNSS_EXTINT"
-		(at 53.34 175.26 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3a352309-40a7-4c04-a66b-0607b142fc2c")
 	)
 	(hierarchical_label "MCU_GNSS_GEOFENCE"
 		(shape output)
@@ -5268,16 +5318,6 @@
 		)
 		(uuid "7a519459-e363-4843-b939-33d3dd9e372d")
 	)
-	(label "MCU_GNSS_RXD"
-		(at 80.01 148.59 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a2030243-f2db-42ac-9062-806b9f3874ca")
-	)
 	(hierarchical_label "MCU_GNSS_AP_REQ"
 		(shape output)
 		(at 157.48 76.2 180)
@@ -5289,16 +5329,6 @@
 		)
 		(uuid "b200bf93-10c1-4783-ac91-af44b9d70e5b")
 	)
-	(label "MCU_GNSS_TXD"
-		(at 123.19 151.13 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b266b479-1733-45ad-a740-e5b4d00be539")
-	)
 	(hierarchical_label "MCU_GNSS_JAM_IND"
 		(shape output)
 		(at 157.48 86.36 180)
@@ -5309,16 +5339,6 @@
 			(justify right bottom)
 		)
 		(uuid "b9760d0b-297f-46cf-ba7b-b30dabb26732")
-	)
-	(label "MCU_GNSS_RXD"
-		(at 53.34 180.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d78653d2-02a3-4ff1-b869-c2e9b64bdfaf")
 	)
 	(hierarchical_label "MCU_GNSS_ANT_ON"
 		(shape output)
@@ -5364,16 +5384,6 @@
 		)
 		(uuid "f4b416e9-71d6-4631-bd9d-487492e722c5")
 	)
-	(label "GNSS_RF_IN"
-		(at 115.57 34.29 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f701fde1-b6cf-49ba-8be6-30ea99b80183")
-	)
 	(hierarchical_label "MCU_GNSS_RX"
 		(shape output)
 		(at 190.5 99.06 180)
@@ -5384,16 +5394,6 @@
 			(justify right bottom)
 		)
 		(uuid "fc2c817d-8c05-44e0-a9f7-79a71e5771ae")
-	)
-	(label "MCU_GNSS_SAFEBOOT"
-		(at 53.34 182.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fdc9be32-4222-4b3d-b680-f659a701c88f")
 	)
 	(symbol
 		(lib_id "Connector:TC2030")
