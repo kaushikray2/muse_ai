@@ -13238,7 +13238,7 @@
 			)
 		)
 	)
-	(footprint "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm_ThermalVias"
+	(footprint "Package_QFP:LQFP-48_7x7mm_P0.5mm"
 		(layer "F.Cu")
 		(uuid "ae37c784-8539-4e26-981c-a87f00568e51")
 		(at 139.8604 64.6256 180)
