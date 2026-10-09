@@ -1,0 +1,3 @@
+(rule "Fine Pitch IC Exceptions"
+   (constraint clearance (min 0.127mm))
+   (condition "A.insideArea('U1')"))
