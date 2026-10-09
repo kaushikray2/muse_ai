@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-09  
 **Source:** `tracher_2026/` (RL78 R7F100GGN, fixed 2026-10-09)  
-**Target:** `tracher_2026_ra0e2/` (Renesas RA0E2 R7FA0E2094CFM, 48-pin HWQFN)  
+**Target:** `tracher_2026_ra0e2/` (Renesas RA0E2, 48-pin LQFP 7x7mm — hand-solderable for prototypes)  
 **File changed:** `micro.kicad_sch` (U1 symbol + rewiring). `power.kicad_sch`, `gps.kicad_sch`, `tracher_2026.kicad_sch` unchanged (hierarchical label names preserved).
 
 ## Pin Mapping Table (RA0E2 R7FA0E2094CFM)
@@ -92,7 +92,7 @@
 - LED circuit D1 + R3 (220Ω) — unchanged, now on P103 (pin 33).
 - All LoRa nets (NSS/MOSI/MISO/SCK/RXEN/TXEN/BUSY/DIO1/NRST) — rewired to new pins, same net names.
 - All hierarchical labels/names unchanged — top sheet (`tracher_2026.kicad_sch`) needs no changes.
-- U1 footprint set to `Package_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm` (**verify against RA0E2 HWQFN datasheet in Phase 2**).
+- U1 footprint set to `Package_QFP:LQFP-48_7x7mm_P0.5mm` (2026-10-09: changed from QFN to LQFP for hand-soldering prototypes; same die/pinout, no thermal pad).
 
 ## Pre-existing Issues Found (in RL78 source, now fixed)
 The RL78 "fixed" schematic had incomplete MCU wiring:
@@ -110,7 +110,7 @@ All fixed in this migration by rewiring every functional net to the correct RA0E
 - **Top sheet**: not modified (hier names unchanged). Note: `kicad-cli sch erc` fails to load the top sheet hierarchically ("Failed to load schematic") — pre-existing quirk, also happens on unmodified files. Kaushik should run ERC in KiCad GUI.
 
 ## Open Items for Kaushik / Phase 2
-- Verify U1 footprint `Package_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm` against R7FA0E2094CFM HWQFN datasheet (pad size, thermal pad, pitch).
+- Verify U1 footprint `Package_QFP:LQFP-48_7x7mm_P0.5mm` against RA0E2 48-pin LFQFP datasheet (e.g. R7FA0E2148CFP).
 - New components C10, C11 need PCB footprints placed near U1 (Phase 2 layout).
 - J1 TC2030 pinout changed to SWD — verify against Tag-Connect cable.
 - Run ERC in KiCad GUI (hierarchical) to confirm zero errors.
