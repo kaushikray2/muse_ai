@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 200" role="img" aria-label="Orbit logo">
+  <title>Orbit — off-grid tracking</title>
+  <!-- Mark -->
+  <g transform="translate(0,0)">
+    <ellipse cx="100" cy="100" rx="78" ry="46" fill="none" stroke="#7DB7A7" stroke-width="7" transform="rotate(-20 100 100)"/>
+    <circle cx="100" cy="100" r="17" fill="#FFFFFF"/>
+    <circle cx="100" cy="100" r="17" fill="none" stroke="#7DB7A7" stroke-width="3" opacity="0.35"/>
+    <circle cx="173.3" cy="98.9" r="11" fill="#7DB7A7"/>
+    <circle cx="173.3" cy="98.9" r="16.5" fill="none" stroke="#7DB7A7" stroke-width="2.5" opacity="0.5"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="212" y="118" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="10" fill="#FFFFFF">ORBIT</text>
+</svg>
