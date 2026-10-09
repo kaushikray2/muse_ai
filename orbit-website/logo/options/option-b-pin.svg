@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Orbit option B — pin and orbit">
+  <title>Option B: location pin crossed by an orbit</title>
+  <ellipse cx="100" cy="100" rx="86" ry="42" fill="none" stroke="#7DB7A7" stroke-width="6" transform="rotate(-20 100 100)"/>
+  <path d="M100 28 C72 28 54 50 54 76 C54 108 100 162 100 162 C100 162 146 108 146 76 C146 50 128 28 100 28 Z" fill="#7DB7A7"/>
+  <circle cx="100" cy="76" r="18" fill="#FFFFFF"/>
+  <circle cx="173.3" cy="98.9" r="9" fill="#FFFFFF"/>
+</svg>
