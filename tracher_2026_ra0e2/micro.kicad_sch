@@ -5142,7 +5142,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm"
+		(property "Footprint" "Package_QFP:LQFP-48_7x7mm_P0.5mm"
 			(at 180.34 97.79 0)
 			(hide yes)
 			(show_name no)
