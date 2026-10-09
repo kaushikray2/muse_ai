@@ -5225,7 +5225,8 @@
 		)
 		(uuid "27768cd6-5a0a-44f2-b706-171bff74bc4f")
 	)
-	(label "MCU_GNSS_EN"
+	(hierarchical_label "MCU_GNSS_EN"
+		(shape input)
 		(at 279.4 82.55 180)
 		(effects
 			(font
@@ -5245,7 +5246,8 @@
 		)
 		(uuid "3a352309-40a7-4c04-a66b-0607b142fc2c")
 	)
-	(label "MCU_GNSS_GEOFENCE"
+	(hierarchical_label "MCU_GNSS_GEOFENCE"
+		(shape output)
 		(at 157.48 81.28 180)
 		(effects
 			(font
@@ -5255,7 +5257,8 @@
 		)
 		(uuid "5f80a574-ba2c-4dd2-aaaf-9ee101c69c79")
 	)
-	(label "MCU_GNSS_TX"
+	(hierarchical_label "MCU_GNSS_TX"
+		(shape input)
 		(at 190.5 91.44 180)
 		(effects
 			(font
@@ -5275,7 +5278,8 @@
 		)
 		(uuid "a2030243-f2db-42ac-9062-806b9f3874ca")
 	)
-	(label "MCU_GNSS_AP_REQ"
+	(hierarchical_label "MCU_GNSS_AP_REQ"
+		(shape output)
 		(at 157.48 76.2 180)
 		(effects
 			(font
@@ -5295,7 +5299,8 @@
 		)
 		(uuid "b266b479-1733-45ad-a740-e5b4d00be539")
 	)
-	(label "MCU_GNSS_JAM_IND"
+	(hierarchical_label "MCU_GNSS_JAM_IND"
+		(shape output)
 		(at 157.48 86.36 180)
 		(effects
 			(font
@@ -5315,7 +5320,8 @@
 		)
 		(uuid "d78653d2-02a3-4ff1-b869-c2e9b64bdfaf")
 	)
-	(label "MCU_GNSS_ANT_ON"
+	(hierarchical_label "MCU_GNSS_ANT_ON"
+		(shape output)
 		(at 157.48 73.66 180)
 		(effects
 			(font
@@ -5325,7 +5331,8 @@
 		)
 		(uuid "ec642487-1487-456a-8685-82f370d72643")
 	)
-	(label "MCU_GNSS_RESET"
+	(hierarchical_label "MCU_GNSS_RESET"
+		(shape input)
 		(at 25.4 177.8 0)
 		(effects
 			(font
@@ -5335,7 +5342,8 @@
 		)
 		(uuid "f0608ace-0400-401f-a059-2ad934069489")
 	)
-	(label "MCU_GNSS_3DFIX"
+	(hierarchical_label "MCU_GNSS_3DFIX"
+		(shape output)
 		(at 157.48 83.82 180)
 		(effects
 			(font
@@ -5345,7 +5353,8 @@
 		)
 		(uuid "f437caef-5b40-4ea3-af8e-172e7af7e7a7")
 	)
-	(label "MCU_GNSS_RESET"
+	(hierarchical_label "MCU_GNSS_RESET"
+		(shape input)
 		(at 66.04 71.12 0)
 		(effects
 			(font
@@ -5365,7 +5374,8 @@
 		)
 		(uuid "f701fde1-b6cf-49ba-8be6-30ea99b80183")
 	)
-	(label "MCU_GNSS_RX"
+	(hierarchical_label "MCU_GNSS_RX"
+		(shape output)
 		(at 190.5 99.06 180)
 		(effects
 			(font
@@ -5394,7 +5404,7 @@
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "089242c2-0f17-43e3-954d-37d2a6fcf8f5")
 		(property "Reference" "J7"
 			(at 101.6 139.7 0)
@@ -6042,7 +6052,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "390600c8-6901-4566-8ea5-a9dbe899a9d9")
 		(property "Reference" "C26"
 			(at 214.63 82.55 0)
@@ -6671,7 +6681,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "66bd5968-7279-4636-9f48-28b205aeb962")
 		(property "Reference" "R37"
 			(at 148.59 175.26 90)
@@ -7148,7 +7158,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "91e9ee8c-54d6-4df5-b1ef-8e9a6a8ef983")
 		(property "Reference" "U6"
@@ -8891,7 +8901,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "eb61a18b-27d9-42dd-834b-55ebaaa0da44")
 		(property "Reference" "R26"
 			(at 241.3 40.64 90)
@@ -9048,7 +9058,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "f73499ca-9755-47f3-b9ec-5b6be7dd4f0b")
 		(property "Reference" "C27"
 			(at 41.91 206.248 0)
