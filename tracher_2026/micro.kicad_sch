@@ -4779,7 +4779,8 @@
 		)
 		(uuid "024326bb-aee0-422b-bd53-4195ef44ad9e")
 	)
-	(label "MCU_GNSS_RX"
+	(hierarchical_label "MCU_GNSS_RX"
+		(shape input)
 		(at 234.95 123.19 180)
 		(effects
 			(font
@@ -4809,7 +4810,8 @@
 		)
 		(uuid "0b143369-aa5f-4750-90d8-b3b2f34618f5")
 	)
-	(label "MCU_GNSS_AP_REQ"
+	(hierarchical_label "MCU_GNSS_AP_REQ"
+		(shape input)
 		(at 234.95 57.15 180)
 		(effects
 			(font
@@ -4859,7 +4861,8 @@
 		)
 		(uuid "2c4f5584-3f5a-46d0-87fd-ac45135a8ce4")
 	)
-	(label "MCU_SYS_EN"
+	(hierarchical_label "MCU_SYS_EN"
+		(shape output)
 		(at 234.95 45.72 180)
 		(effects
 			(font
@@ -4869,7 +4872,8 @@
 		)
 		(uuid "394f4baf-7cc8-405a-8ba0-51cd911b5af6")
 	)
-	(label "MCU_GNSS_EN"
+	(hierarchical_label "MCU_GNSS_EN"
+		(shape output)
 		(at 234.95 59.69 180)
 		(effects
 			(font
@@ -4919,7 +4923,8 @@
 		)
 		(uuid "412ee795-0275-4be9-bb63-494366cd273c")
 	)
-	(label "MCU_GNSS_TX"
+	(hierarchical_label "MCU_GNSS_TX"
+		(shape output)
 		(at 234.95 120.65 180)
 		(effects
 			(font
@@ -4939,7 +4944,8 @@
 		)
 		(uuid "43b213a6-1f18-43d2-a15b-aa142021c658")
 	)
-	(label "MCU_BattVolt_EN"
+	(hierarchical_label "MCU_BattVolt_EN"
+		(shape output)
 		(at 234.95 40.64 180)
 		(effects
 			(font
@@ -4949,7 +4955,8 @@
 		)
 		(uuid "48050fad-f037-4391-8261-6aa916765144")
 	)
-	(label "MCU_BattVolt"
+	(hierarchical_label "MCU_BattVolt"
+		(shape input)
 		(at 234.95 68.58 180)
 		(effects
 			(font
@@ -4999,7 +5006,8 @@
 		)
 		(uuid "7ebc37fe-b023-439b-9342-712e430e401d")
 	)
-	(label "MCU_GNSS_JAM_IND"
+	(hierarchical_label "MCU_GNSS_JAM_IND"
+		(shape input)
 		(at 234.95 64.77 180)
 		(effects
 			(font
@@ -5059,7 +5067,8 @@
 		)
 		(uuid "abf873fd-0785-4194-800b-89cc4f37f542")
 	)
-	(label "MCU_GNSS_3DFIX"
+	(hierarchical_label "MCU_GNSS_3DFIX"
+		(shape input)
 		(at 234.95 52.07 180)
 		(effects
 			(font
@@ -5069,7 +5078,8 @@
 		)
 		(uuid "ae781482-4f30-4cf7-a5e8-f2fa68462463")
 	)
-	(label "MCU_GNSS_GEOFENCE"
+	(hierarchical_label "MCU_GNSS_GEOFENCE"
+		(shape input)
 		(at 234.95 62.23 180)
 		(effects
 			(font
@@ -5099,7 +5109,8 @@
 		)
 		(uuid "c5cf35b1-8ff3-4d88-9d9d-088d49d930e5")
 	)
-	(label "MCU_GNSS_RESET"
+	(hierarchical_label "MCU_GNSS_RESET"
+		(shape output)
 		(at 234.95 48.26 180)
 		(effects
 			(font
@@ -5119,7 +5130,8 @@
 		)
 		(uuid "c9ab5902-0bee-4184-8c90-b3a0f511db34")
 	)
-	(label "MCU_BUTTON_SENSE"
+	(hierarchical_label "MCU_BUTTON_SENSE"
+		(shape input)
 		(at 234.95 43.18 180)
 		(effects
 			(font
@@ -5149,7 +5161,8 @@
 		)
 		(uuid "d518513c-88fc-4586-b695-00c029ca9e1c")
 	)
-	(label "MCU_GNSS_ANT_ON"
+	(hierarchical_label "MCU_GNSS_ANT_ON"
+		(shape input)
 		(at 234.95 54.61 180)
 		(effects
 			(font
@@ -8949,4 +8962,44 @@
 		)
 	)
 	(embedded_fonts no)
+	(wire
+		(pts
+			(xy 213.36 92.71) (xy 225 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "135d1486-e35d-440f-a70f-9a2e58b3445d")
+	)
+	(hierarchical_label "MCU_I2C_SCL"
+		(shape bidirectional)
+		(at 225 92.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9e23d865-c7ee-4256-9c05-929ca958903b")
+	)
+	(wire
+		(pts
+			(xy 213.36 95.25) (xy 225 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3926f0f1-615b-4514-bc0d-22ee8d34ae92")
+	)
+	(hierarchical_label "MCU_I2C_SDA"
+		(shape bidirectional)
+		(at 225 95.25 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "58897256-043f-4bab-9c4d-8cd5130627db")
+	)
 )
