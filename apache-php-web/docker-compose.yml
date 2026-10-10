@@ -1,0 +1,9 @@
+services:
+  web:
+    image: php:8.3-apache
+    container_name: apache-php-web
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-8080}:80"
+    volumes:
+      - ./html:/var/www/html
