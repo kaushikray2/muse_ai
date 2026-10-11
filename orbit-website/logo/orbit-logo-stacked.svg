@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" role="img" aria-label="Orbit stacked logo">
-  <title>Orbit stacked logo</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" role="img" aria-label="Shepard stacked logo">
+  <title>Shepard stacked logo</title>
   <ellipse cx="100" cy="80" rx="78" ry="46" fill="none" stroke="#7DB7A7" stroke-width="7" transform="rotate(-20 100 80)"/>
   <rect x="84" y="50" width="32" height="60" rx="9" fill="#14201D" stroke="#7DB7A7" stroke-width="4"/>
   <circle cx="100" cy="80" r="7" fill="#7DB7A7"/>
   <circle cx="171.4" cy="78.5" r="10" fill="#7DB7A7"/>
   <circle cx="44.4" cy="124.7" r="10" fill="#7DB7A7"/>
   <circle cx="60.2" cy="48.5" r="10" fill="#7DB7A7"/>
-  <text x="100" y="215" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="56" letter-spacing="12" fill="#FFFFFF">ORBIT</text>
+  <text x="100" y="215" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="32" letter-spacing="5" fill="#FFFFFF">SHEPARD</text>
 </svg>
