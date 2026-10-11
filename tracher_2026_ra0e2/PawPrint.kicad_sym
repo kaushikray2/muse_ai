@@ -5,7 +5,7 @@
 		(property "Footprint" "PawPrint:QFN-32_5x5mm_P0.5mm" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(symbol "R7FA0E2094CFJ_0_1"
-			(rectangle (start -33.02 55.00) (end 33.02 -55.00)
+			(rectangle (start -33.02 -60.00) (end 33.02 55.00)
 				(stroke (width 0.254) (type default)) (fill (type background)))
 		)
 		(symbol "R7FA0E2094CFJ_1_1"
