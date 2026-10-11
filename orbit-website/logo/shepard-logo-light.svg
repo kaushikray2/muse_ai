@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 200" role="img" aria-label="Shepard logo for light backgrounds">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 200" role="img" aria-label="Shepherd logo for light backgrounds">
   <title>Orbit logo for light backgrounds</title>
   <ellipse cx="100" cy="100" rx="78" ry="46" fill="none" stroke="#4E8A7B" stroke-width="7" transform="rotate(-20 100 100)"/>
   <rect x="84" y="70" width="32" height="60" rx="9" fill="#14201D" stroke="#4E8A7B" stroke-width="4"/>
@@ -6,5 +6,5 @@
   <circle cx="171.4" cy="98.5" r="10" fill="#4E8A7B"/>
   <circle cx="44.4" cy="144.7" r="10" fill="#4E8A7B"/>
   <circle cx="60.2" cy="68.5" r="10" fill="#4E8A7B"/>
-  <text x="208" y="118" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="46" letter-spacing="7" fill="#14201D">SHEPARD</text>
+  <text x="208" y="118" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="40" letter-spacing="6" fill="#14201D">SHEPHERD</text>
 </svg>
